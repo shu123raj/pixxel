@@ -251,7 +251,7 @@ const DiscoverCapabilitiesSection = () => {
 // ==========================================
 const VideoShowcase = () => {
   const [centerId, setCenterId] = useState(1);
-  const videoUrls = ["desktop-demo.mp4", "desktop-demo.mp4", "desktop-demo.mp4"];
+  const videoUrls = ["https://res.cloudinary.com/do6jlckzy/video/upload/v1783145093/desktop-demo_tqzbun.mp4", "https://res.cloudinary.com/do6jlckzy/video/upload/v1783145093/desktop-demo_tqzbun.mp4", "https://res.cloudinary.com/do6jlckzy/video/upload/v1783145093/desktop-demo_tqzbun.mp4"];
   return (
     <section className="relative w-full py-2 md:py-6 flex flex-col items-center justify-center overflow-hidden z-40 bg-[#000]">
        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[1200px] h-[400px] md:h-[500px] bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-cyan-400/20 blur-[130px] rounded-full pointer-events-none z-0"></div>
