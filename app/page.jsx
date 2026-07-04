@@ -54,7 +54,7 @@ const fadeUpVariant = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0,
 // ==========================================
 const CallToActionPricingShowcase = () => {
   return (
-    <section className="relative w-full overflow-hidden flex justify-center py-20 pb-12 sm:pb-24 bg-[#000] z-20" id="pricing-showcase-section">
+    <section className="relative w-full overflow-hidden flex justify-center px-4 py-16 sm:py-20 pb-12 sm:pb-24 bg-[#000] z-20" id="pricing-showcase-section">
       <div className="relative z-10 w-full max-w-[1100px] h-auto mx-auto rounded-[30px] p-[1.5px] bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_20px_60px_rgba(0,0,0,1)]">
           <div className="relative w-full h-full bg-[#07050a] rounded-[29px] flex flex-col items-center pt-10 pb-10 px-6 lg:pt-14 lg:pb-12 lg:px-12 overflow-hidden">
               <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[85%] max-w-[900px] h-[450px] bg-gradient-to-r from-cyan-400/30 via-purple-500/30 to-cyan-400/30 blur-[100px] rounded-full pointer-events-none z-0"></div>
@@ -82,15 +82,15 @@ const CallToActionPricingShowcase = () => {
                   </button>
                 </Link>
               </div>
-              <div className="relative w-full max-w-[900px] mx-auto aspect-[1.2] sm:aspect-[4/3] md:aspect-[16/9] z-20 flex justify-center -mt-16 md:-mt-[80px] lg:-mt-[110px] pointer-events-none transform md:scale-100 sm:scale-[0.9]">
+              <div className="relative w-full max-w-[900px] mx-auto aspect-[1.05] sm:aspect-[4/3] md:aspect-[16/9] z-20 flex justify-center -mt-8 sm:-mt-16 md:-mt-[80px] lg:-mt-[110px] pointer-events-none transform md:scale-100 sm:scale-[0.9]">
                   <div className="absolute z-[8] bottom-[18%] left-[12%] md:bottom-[15%] md:left-[6%] lg:left-[-1%] w-[52%] md:w-[45%] lg:w-[40%]"><img src="/ipad.png" style={{ width: "100%", height: "auto" }} className="relative z-10 object-contain pointer-events-none drop-shadow-[0_15px_50px_rgba(0,0,0,0.7)] scale-[0.95]" alt="Second Tablet Layout Setup Left" /></div>
-                  <div className="absolute z-10 bottom-[14%] right-[20%] md:bottom-[15%] md:right-[0%] lg:right-[[-1%] w-[58%] md:w-[48%] lg:w-[40%]"><img src="/ipad1.png" style={{ width: "100%", height: "auto" }} className="relative z-10 object-contain pointer-events-none hover:-translate-y-1 drop-shadow-[0_15px_60px_rgba(0,0,0,0.8)] scale-[1.02]" alt="Tablet Layout Setup" /></div>
+                  <div className="absolute z-10 bottom-[14%] right-[12%] md:bottom-[15%] md:right-[0%] lg:right-[-1%] w-[58%] md:w-[48%] lg:w-[40%]"><img src="/ipad1.png" style={{ width: "100%", height: "auto" }} className="relative z-10 object-contain pointer-events-none hover:-translate-y-1 drop-shadow-[0_15px_60px_rgba(0,0,0,0.8)] scale-[1.02]" alt="Tablet Layout Setup" /></div>
                   <div className="absolute z-[15] left-[-3%] md:left-[2%] lg:left-[-8%] bottom-[8%] md:bottom-[3%] w-[22%] md:w-[20%] lg:w-[23%]"><img src="/mobile.png" style={{ width: "100%", height: "auto" }} className="relative z-10 object-contain hover:-translate-y-1 drop-shadow-[20px_30px_70px_rgba(0,0,0,0.95)]" alt="Phone Frame Render File Overlay" /></div>
                   <div className="absolute z-[20] w-[88%] md:w-[74%] lg:w-[72%] bottom-[-5%] left-1/2 -translate-x-1/2 transition-all"><img src="/macbook.png" style={{ width: "100%", height: "auto" }} className="relative z-[25] object-contain drop-shadow-[0_-5px_80px_rgba(0,0,0,0.45)] hover:-translate-y-1 transition-transform duration-1000 transform-origin-bottom hover:-translate-y-1 hover:brightness-[1.05]" alt="Device Monitor Empty Mask View" /></div>
                   <div className="absolute z-[30] bottom-[-3%] right-[-5%] sm:bottom-[-4%] md:bottom-[0%] lg:bottom-[5%] lg:-right-[3%] w-[18%] sm:w-[15%] md:w-[13.5%] lg:w-[12%]"><img src="/iphone.png" style={{ width: "100%", height: "auto" }} className="relative z-[35] object-contain scale-[1.03] transform pointer-events-auto hover:-translate-y-1 transition-all duration-300 drop-shadow-[0_20px_50px_rgba(0,0,0,1)] hover:brightness-[1.1]" alt="Premium App iPhone Base File Display" /></div>
               </div>
               <div className="relative w-full z-30 mt-[-20px] sm:mt-[-40px] lg:mt-[-5px] flex flex-col items-center justify-center">
-                  <div className="flex flex-col md:flex-row justify-center items-center md:space-x-8 lg:space-x-12 space-y-4 md:space-y-0 text-slate-200 text-[14px] lg:text-[15px] font-normal tracking-wide mb-4 md:mb-5">
+                  <div className="flex flex-col md:flex-row justify-center items-start md:items-center md:space-x-8 lg:space-x-12 space-y-4 md:space-y-0 text-slate-200 text-[13px] sm:text-[14px] lg:text-[15px] font-normal tracking-wide mb-4 md:mb-5">
                       <span className="flex items-center whitespace-nowrap"><GradientCheckIcon />No risks & no hidden fees</span>
                       <span className="flex items-center whitespace-nowrap"><GradientCheckIcon />24/7 technical support</span>
                       <span className="flex items-center whitespace-nowrap"><GradientCheckIcon />30-day money back guarantee</span>
@@ -195,8 +195,8 @@ const DiscoverCapabilitiesSection = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 min-h-[300px] md:min-h-[440px] lg:min-h-0 relative">
-            <div className="relative w-full h-full min-h-[300px] md:min-h-[440px] lg:min-h-[520px] rounded-2xl overflow-hidden   bg-[#080810] shadow-[0_0_60px_rgba(0,0,0,0.7)]">
+              <div className="flex-1 min-h-[300px] md:min-h-[440px] lg:min-h-0 relative">
+            <div className="relative w-full h-full min-h-[320px] sm:min-h-[380px] md:min-h-[440px] lg:min-h-[520px] rounded-2xl overflow-hidden bg-[#080810] shadow-[0_0_60px_rgba(0,0,0,0.7)]">
               <AnimatePresence mode="wait">
                 <motion.div key={activeFeature.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }} className="absolute inset-0">
                   <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-black">
@@ -209,8 +209,8 @@ const DiscoverCapabilitiesSection = () => {
               <AnimatePresence mode="wait">
                 <motion.div key={activeFeature.id + "_info"} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} transition={{ duration: 0.3 }} className="absolute bottom-0 left-0 right-0 z-20 p-5 md:p-7">
                   <div className="flex items-end justify-between gap-4">
-                    <div><h3 className="text-white font-bold text-lg md:text-xl mb-1 drop-shadow-lg">{activeFeature.label}</h3><p className="text-slate-300/80 text-sm font-light max-w-sm leading-snug">{activeFeature.description}</p></div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
+                    <div><h3 className="text-white font-bold text-base sm:text-lg md:text-xl mb-1 drop-shadow-lg">{activeFeature.label}</h3><p className="text-slate-300/80 text-xs sm:text-sm font-light max-w-sm leading-snug">{activeFeature.description}</p></div>
+                    <div className="hidden sm:flex items-center gap-2 flex-shrink-0">
                       <button onClick={() => { setActiveIndex((prev) => (prev - 1 + discoverFeatures.length) % discoverFeatures.length); setProgress(0); }} className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"><ChevronLeft size={16} /></button>
                       <button onClick={goToNext} className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"><ChevronRight size={16} /></button>
                     </div>
@@ -253,20 +253,20 @@ const VideoShowcase = () => {
   const [centerId, setCenterId] = useState(1);
   const videoUrls = ["https://res.cloudinary.com/do6jlckzy/video/upload/v1783145093/desktop-demo_tqzbun.mp4", "https://res.cloudinary.com/do6jlckzy/video/upload/v1783145093/desktop-demo_tqzbun.mp4", "https://res.cloudinary.com/do6jlckzy/video/upload/v1783145093/desktop-demo_tqzbun.mp4"];
   return (
-    <section className="relative w-full py-2 md:py-6 flex flex-col items-center justify-center overflow-hidden z-40 bg-[#000]">
+    <section className="relative w-full py-10 md:py-6 flex flex-col items-center justify-center overflow-hidden z-40 bg-[#000]">
        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[1200px] h-[400px] md:h-[500px] bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-cyan-400/20 blur-[130px] rounded-full pointer-events-none z-0"></div>
        <div className="text-center z-20 relative px-4 mb-16 sm:mb-20">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 shadow-[0_0_20px_rgba(168,85,247,0.15)] text-cyan-300 text-[12px] md:text-sm font-bold tracking-[0.2em] uppercase mb-6"><Sparkles size={16} className="text-amber-400 animate-pulse" />Cinematic Experience</motion.div>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-5 leading-tight">Immerse in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.3)]">Brilliance</span></motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-slate-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">Experience our next-generation visual rendering. <span className="text-cyan-400 font-medium">Tap on any video</span> to bring it to the main stage and explore the details.</motion.p>
        </div>
-       <div className="relative w-full max-w-[1900px] h-[350px] sm:h-[500px] md:h-[650px] lg:h-[550px] flex items-center justify-center mx-auto mb-10 z-10 perspective-[1000px]">
+       <div className="relative w-full max-w-[1900px] h-[260px] xs:h-[320px] sm:h-[430px] md:h-[560px] lg:h-[550px] flex items-center justify-center mx-auto mb-10 z-10 perspective-[1000px]">
           {videoUrls.map((url, i) => {
              const isCenter = i === centerId;
              const isLeft = i === (centerId + 2) % 3;
              const position = isCenter ? 'center' : isLeft ? 'left' : 'right';
              return (
-               <motion.div key={`${url}-${i}`} onClick={() => setCenterId(i)} className={`absolute top-1/2 -translate-y-1/2 w-[85%] sm:w-[75%] md:w-[65%] lg:w-[65%] aspect-video rounded-[16px] md:rounded-[20px] overflow-hidden cursor-pointer will-change-transform ${isCenter ? 'shadow-[0_40px_100px_rgba(0,0,0,0.9)]' : 'shadow-2xl border border-white/5'}`} initial={false} animate={{ left: position === 'center' ? '50%' : position === 'left' ? '0%' : '100%', x: position === 'center' ? '-50%' : position === 'left' ? '-20%' : '-90%', scale: position === 'center' ? 1.15 : 0.8, zIndex: position === 'center' ? 30 : 10, opacity: position === 'center' ? 1 : 0.35 }} transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
+               <motion.div key={`${url}-${i}`} onClick={() => setCenterId(i)} className={`absolute top-1/2 -translate-y-1/2 w-[88%] sm:w-[75%] md:w-[65%] lg:w-[65%] aspect-video rounded-[16px] md:rounded-[20px] overflow-hidden cursor-pointer will-change-transform ${isCenter ? 'shadow-[0_40px_100px_rgba(0,0,0,0.9)]' : 'shadow-2xl border border-white/5'}`} initial={false} animate={{ left: position === 'center' ? '50%' : position === 'left' ? '-4%' : '104%', x: position === 'center' ? '-50%' : position === 'left' ? '-20%' : '-90%', scale: position === 'center' ? 1.05 : 0.78, zIndex: position === 'center' ? 30 : 10, opacity: position === 'center' ? 1 : 0.25 }} transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
                  <video src={url} loop muted={!isCenter} autoPlay playsInline controls={isCenter} className={`w-full h-full object-cover bg-[#0c0d0e] ${isCenter ? '' : 'pointer-events-none'}`} />
                  <motion.div initial={false} animate={{ opacity: isCenter ? 0 : 1 }} transition={{ duration: 0.5 }} className="absolute inset-0 bg-black/40 pointer-events-none" />
                  {!isCenter && (<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/50 pointer-events-none"><PlayCircle size={60} strokeWidth={1} /></div>)}
@@ -314,11 +314,11 @@ const InteractiveAICard = ({ data, isActive }) => {
         <span className="text-[10px] md:text-xs font-bold text-white/80 tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">BEFORE</span>
         <span className="text-[10px] md:text-xs font-bold text-white/80 tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">AFTER</span>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-30 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pointer-events-auto">
-        <div className="max-w-md"><h2 className="text-3xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">{data.title}</h2><p className="text-sm md:text-base text-white/80 drop-shadow-md">{data.description}</p></div>
-        <div className="flex items-center gap-3 w-full md:w-auto">
-          <button onClick={() => setSliderPos(100)} className="flex-1 md:flex-none px-6 py-3 rounded-lg border border-white/20 bg-black/40 backdrop-blur-md text-white font-semibold text-sm hover:bg-white/10 transition-colors">Original</button>
-          <button onClick={() => setSliderPos(0)} className="flex-1 md:flex-none px-6 py-3 rounded-lg bg-white text-black font-bold text-sm hover:bg-slate-200 transition-colors">{data.buttonLabel}</button>
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-12 z-30 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex flex-col md:flex-row items-start md:items-end justify-between gap-4 sm:gap-6 pointer-events-auto">
+        <div className="max-w-md"><h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">{data.title}</h2><p className="text-xs sm:text-sm md:text-base text-white/80 drop-shadow-md">{data.description}</p></div>
+        <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2 sm:gap-3 w-full md:w-auto">
+          <button onClick={() => setSliderPos(100)} className="flex-1 md:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-white/20 bg-black/40 backdrop-blur-md text-white font-semibold text-xs sm:text-sm hover:bg-white/10 transition-colors">Original</button>
+          <button onClick={() => setSliderPos(0)} className="flex-1 md:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-white text-black font-bold text-xs sm:text-sm hover:bg-slate-200 transition-colors">{data.buttonLabel}</button>
         </div>
       </div>
     </div>
@@ -330,14 +330,14 @@ const AIFeaturesShowcase = () => {
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % aiCarouselData.length);
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + aiCarouselData.length) % aiCarouselData.length);
   return (
-    <section className="py-20 bg-[#000] relative overflow-hidden z-20">
+    <section className="py-16 sm:py-20 bg-[#000] relative overflow-hidden z-20">
       <div className="text-center max-w-4xl mx-auto px-4 mb-12">
         <h3 className="text-sm md:text-base text-white/80 font-medium mb-4">Enhance your photos with powerful AI editing <br className="hidden md:block" /><span className="text-cyan-400">Choose your best plan</span></h3>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Discover Pixxel's <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">capabilities</span></h1>
         <p className="text-slate-400 text-sm md:text-lg max-w-2xl mx-auto font-light leading-relaxed">With Pro Tools, you can sharpen, denoise, upscale, and merge exposures or panoramas to reveal every detail exactly as you imagined it.</p>
       </div>
-      <div className="relative w-full max-w-[1600px] mx-auto h-[450px] md:h-[600px] flex items-center justify-center px-4">
-        <button onClick={prevSlide} className="absolute left-4 md:left-10 z-40 w-12 h-12 rounded-full border border-white/10 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 transition-colors"><ChevronLeft className="w-6 h-6" /></button>
+      <div className="relative w-full max-w-[1600px] mx-auto h-[420px] sm:h-[500px] md:h-[600px] flex items-center justify-center px-4">
+        <button onClick={prevSlide} className="absolute left-3 md:left-10 z-40 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 transition-colors"><ChevronLeft className="w-5 h-5 md:w-6 md:h-6" /></button>
         <div className="relative w-full h-full flex items-center justify-center perspective-[1200px]">
           {aiCarouselData.map((item, index) => {
             let offset = index - currentIndex;
@@ -349,12 +349,12 @@ const AIFeaturesShowcase = () => {
             let transform = "translateX(0) scale(1) translateZ(0)";
             let opacity = 0; let zIndex = 0;
             if (isActive) { transform = "translateX(0) scale(1) translateZ(0px)"; opacity = 1; zIndex = 30; }
-            else if (isLeft) { transform = "translateX(-85%) scale(0.85) translateZ(-100px)"; opacity = 0.4; zIndex = 20; }
-            else if (isRight) { transform = "translateX(85%) scale(0.85) translateZ(-100px)"; opacity = 0.4; zIndex = 20; }
+            else if (isLeft) { transform = "translateX(-72%) scale(0.82) translateZ(-100px)"; opacity = 0.25; zIndex = 20; }
+            else if (isRight) { transform = "translateX(72%) scale(0.82) translateZ(-100px)"; opacity = 0.25; zIndex = 20; }
             return (<div key={item.id} className="absolute w-full max-w-[900px] h-full transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)]" style={{ transform, opacity, zIndex }}><InteractiveAICard data={item} isActive={isActive} /></div>);
           })}
         </div>
-        <button onClick={nextSlide} className="absolute right-4 md:right-10 z-40 w-12 h-12 rounded-full border border-white/10 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 transition-colors"><ChevronRight className="w-6 h-6" /></button>
+        <button onClick={nextSlide} className="absolute right-3 md:right-10 z-40 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/10 transition-colors"><ChevronRight className="w-5 h-5 md:w-6 md:h-6" /></button>
       </div>
       <div className="flex justify-center mt-12">
         <Link href="/pricing">
@@ -417,11 +417,11 @@ const FeatureStepShowcase = ({ title, description, image, steps, reverseLayout =
   const activeFilter = steps[activeStep].filter;
   const isOriginal = activeStep === 0;
   return (
-    <div className={`flex flex-col ${reverseLayout ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 lg:gap-20 max-w-7xl mx-auto px-6`}>
+    <div className={`flex flex-col ${reverseLayout ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 sm:gap-10 lg:gap-20 max-w-7xl mx-auto px-4 sm:px-6`}>
       <div className="flex-1 w-full flex flex-col justify-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">{title}</h2>
-        <p className="text-slate-400 text-sm md:text-lg font-light leading-relaxed mb-12">{description}</p>
-        <div className="relative w-full mt-4 mb-10 pl-2 pr-2">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">{title}</h2>
+        <p className="text-slate-400 text-sm md:text-lg font-light leading-relaxed mb-10 sm:mb-12">{description}</p>
+        <div className="relative w-full mt-4 mb-12 sm:mb-10 pl-2 pr-2">
           <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-1.5 bg-slate-800 rounded-full">
             <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full transition-all duration-500 ease-out" style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}></div>
           </div>
@@ -433,14 +433,14 @@ const FeatureStepShowcase = ({ title, description, image, steps, reverseLayout =
               return (
                 <div key={idx} className="absolute top-1/2 -translate-y-1/2 flex flex-col items-center cursor-pointer group" style={{ left: `${percentage}%`, transform: `translate(-50%, -50%)` }} onClick={() => setActiveStep(idx)}>
                   <div className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${isActive ? 'bg-gradient-to-r from-cyan-400 to-purple-500 shadow-[0_0_15px_rgba(34,211,238,1)]' : isCompleted ? 'bg-cyan-500 border-cyan-400' : 'bg-slate-800 border-slate-600 group-hover:border-slate-400'}`} />
-                  <span className={`absolute top-6 whitespace-nowrap text-[10px] md:text-sm font-bold transition-colors ${isActive ? 'text-white' : isCompleted ? 'text-cyan-100' : 'text-slate-500 group-hover:text-slate-300'}`}>{step.name}</span>
+                  <span className={`absolute top-6 max-w-[58px] sm:max-w-none text-center text-[9px] sm:text-[10px] md:text-sm font-bold leading-tight transition-colors ${isActive ? 'text-white' : isCompleted ? 'text-cyan-100' : 'text-slate-500 group-hover:text-slate-300'}`}>{step.name}</span>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-      <div className="flex-1 w-full h-[400px] md:h-[550px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[1.5rem] border border-white/10 p-2 bg-[#0a0f1c]">
+      <div className="flex-1 w-full h-[320px] sm:h-[400px] md:h-[550px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-[1.5rem] border border-white/10 p-2 bg-[#0a0f1c]">
         <StepImageSlider image={image} filter={activeFilter} isOriginal={isOriginal} />
       </div>
     </div>
@@ -488,8 +488,9 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
 
   return (
     <motion.section
+      id="overview"
       style={{ y: yOffset, opacity: opacityOffset }}
-      className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden pt-19 z-30"
+      className="relative min-h-[860px] sm:min-h-screen flex flex-col items-center justify-start overflow-hidden pt-20 sm:pt-19 z-30"
     >
       <div
         className="absolute inset-0"
@@ -523,7 +524,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05, duration: 0.5 }}
-        className="relative z-50 w-full max-w-[1400px] mx-auto px-4 sm:px-8 flex items-center justify-between mb-9"
+        className="relative z-50 w-full max-w-[1400px] mx-auto px-4 sm:px-8 flex items-center justify-center md:justify-between mb-4 md:mb-9"
       >
         <div className="flex items-center gap-2 cursor-pointer group">
           <span className="mb-1 font-black text-2xl tracking-tighter text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
@@ -625,14 +626,38 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
           <Link href="/demo" className="text-[14px] text-[#a1a1aa] hover:text-white transition-colors">What's new</Link>
         </nav>
       </motion.div>
+      <motion.nav
+        initial={{ opacity: 0, y: -8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.08, duration: 0.45 }}
+        className="relative z-50 mb-5 flex w-full justify-center px-3 md:hidden"
+        aria-label="Mobile home navigation"
+      >
+        <div className="flex max-w-full items-center gap-2 overflow-x-auto rounded-full border border-white/10 bg-black/45 p-1.5 shadow-[0_14px_35px_rgba(0,0,0,0.35)] backdrop-blur-xl no-scrollbar">
+          {[
+            { href: "#overview", label: "Overview" },
+            { href: "#features", label: "Features" },
+            { href: "/pricing", label: "Pricing" },
+            { href: "/demo", label: "What's new" },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="whitespace-nowrap rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-slate-300 transition hover:bg-white/10 hover:text-white"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </motion.nav>
       <motion.div
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.5 }}
-        className="relative z-15 mb-6 mt-1"
+        className="relative z-15 mb-6 mt-1 px-4 w-full flex justify-center"
       >
         <div
-          className="flex items-center gap-2.5 px-5 py-2.5 rounded-full backdrop-blur-xl"
+          className="flex max-w-[min(100%,720px)] items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-full backdrop-blur-xl"
           style={{
             border: "1px solid rgba(34,211,238,0.3)",
             background: "rgba(8,7,13,0.9)",
@@ -640,7 +665,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
           }}
         >
           <Sparkles size={12} style={{ color: "#22d3ee" }} />
-          <span style={{ color: "#94e8f5", fontSize: "11px", fontWeight: 800, letterSpacing: "0.16em", textTransform: "uppercase", lineHeight: 1 }}>
+          <span className="text-center" style={{ color: "#94e8f5", fontSize: "clamp(9px, 2.4vw, 11px)", fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.35 }}>
             PIXXEL 2.0 IS HERE — NOW WITH{" "}
             <span style={{ color: "#22d3ee" }}>BOKEH</span>
             <sup style={{ color: "#22d3ee", fontSize: "7px" }}>AI</sup>
@@ -657,7 +682,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
         initial={{ opacity: 0, y: 22 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.18, duration: 0.6 }}
-        className="relative z-20 text-center px-4 mb-5"
+        className="relative z-20 text-center px-4 mb-5 w-full"
         style={{ maxWidth: "900px" }}
       >
         <h1
@@ -678,7 +703,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
           </span>
         </h1>
         <div
-          className="flex flex-wrap justify-center gap-7 mb-8"
+          className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-7 mb-8"
           style={{ color: "#7a8fa8", fontSize: "14px", fontWeight: 500 }}
         >
           {["One-time purchase — no subscriptions", "30 days money back guarantee"].map((txt) => (
@@ -692,12 +717,12 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
         </div>
         <Link href="/pricing">
           <button
-            className="font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95"
+            className="w-full max-w-[340px] sm:w-auto font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95"
             style={{
               background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
               color: "#000000",
               fontSize: "12px",
-              padding: "9px 104px",
+              padding: "11px 34px",
               borderRadius: "8px",
               boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
               letterSpacing: "0.1em",
@@ -711,8 +736,8 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.32, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-        className="relative w-full max-w-[1400px] mx-auto z-10 px-2 sm:px-4"
-        style={{ height: "650px", marginTop: "2px" }}
+        className="relative w-full max-w-[1400px] mx-auto z-10 px-2 sm:px-4 h-[320px] sm:h-[430px] md:h-[560px] lg:h-[650px]"
+        style={{ marginTop: "2px" }}
       >
         {heroVideos.map((video, i) => {
           const pos      = getPos(i);
@@ -723,17 +748,17 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
                key={i}
               onClick={() => setCenterIdx(i)}
               animate={{
-                left:    isCenter ? "50%"  : isLeft ? "14%"   : "86%",
+                left:    isCenter ? "50%"  : isLeft ? "8%"   : "92%",
                 x:       "-50%",
                 y:       "-50%",
                 scale:   isCenter ? 1      : 0.8,
                 zIndex:  isCenter ? 50     : 20,
-                opacity: isCenter ? 1      : 2,
+                opacity: isCenter ? 1      : 0.42,
               }}
               transition={{ duration: 0.72, ease: [0.32, 0.72, 0, 1] }}
               className="absolute top-1/2 cursor-pointer" 
               style={{
-                width: isCenter ? "min(1120px, 70vw)" : "min(550px, 40vw)",
+                width: isCenter ? "min(1120px, 92vw)" : "min(550px, 58vw)",
                 aspectRatio: "16/9",
               }}
             >
@@ -760,7 +785,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
                 <video
                   ref={(el) => (videoRefs.current[i] = el)}
                   src={video.src}
-                  className="w-full h-full object-fill bg-black"
+                  className="w-full h-full object-cover bg-black"
                   autoPlay
                   muted
                   playsInline
@@ -835,10 +860,10 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
 // ==========================================
 const PremiumShowcaseGallery = () => {
   return (
-    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ margin: "-100px" }} transition={{ duration: 1.2, ease: "easeOut" }} className="relative w-full h-[55vh] md:h-[60vh] lg:h-[70vh] min-h-[450px] mb-20 md:mb-32 flex items-center justify-center -mt-6 sm:-mt-10 lg:-mt-16 overflow-visible z-40 pointer-events-none">
+    <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ margin: "-100px" }} transition={{ duration: 1.2, ease: "easeOut" }} className="relative w-full h-[430px] sm:h-[55vh] md:h-[60vh] lg:h-[70vh] min-h-[360px] sm:min-h-[450px] mb-14 sm:mb-20 md:mb-32 flex items-center justify-center -mt-4 sm:-mt-10 lg:-mt-16 overflow-hidden sm:overflow-visible z-40 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#140b2e]/10 to-[#000] pointer-events-none z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center select-none pointer-events-none z-0 opacity-[0.03]"><h1 className="text-[12vw] sm:text-[14vw] md:text-[180px] font-black leading-none text-white whitespace-nowrap tracking-tighter">AI VISION</h1></div>
-        <div className="w-full max-w-[1500px] h-[450px] sm:h-[600px] relative z-40 px-2 lg:px-4 mx-auto overflow-visible pointer-events-auto">
+        <div className="w-full max-w-[1500px] h-[360px] sm:h-[600px] relative z-40 px-2 lg:px-4 mx-auto overflow-visible pointer-events-auto">
             <div className="absolute inset-0 flex items-center justify-center group pointer-events-none">
                 <motion.div initial={{ y: "20%" }} animate={{ y: "-20%" }} transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }} className="absolute z-[60] left-[50%] -translate-x-1/2 w-[60%] sm:w-[45%] md:w-[35%] lg:w-[28%] xl:w-[24%] aspect-[3/4] sm:aspect-[4/5] rounded-[1.5rem] lg:rounded-[2rem] overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.8)] border border-white/[0.08] bg-[#0c0817] rotate-0 md:rotate-2 p-1 md:p-1.5 backdrop-blur-xl pointer-events-auto cursor-crosshair hover:shadow-[0_0_80px_rgba(168,85,247,0.3)] transition-shadow duration-300"><div className="w-full h-full rounded-[1.1rem] overflow-hidden"><img src={myPhotos[0]} className="w-full h-full object-cover scale-[1.02] hover:scale-[1.1] transition-transform duration-1000 grayscale-[5%]" alt="AI Focal Edit"/></div></motion.div>
                 <motion.div initial={{ y: "-15%" }} animate={{ y: "15%" }} transition={{ duration: 6, delay: 0.5, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }} className="absolute z-[50] left-[5%] sm:left-[10%] md:left-[15%] lg:left-[22%] w-[40%] sm:w-[28%] md:w-[22%] lg:w-[18%] aspect-[4/4] lg:aspect-[4/3] rounded-[1.2rem] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.6)] border border-white/5 opacity-80 -rotate-3 sm:-rotate-6 pointer-events-auto cursor-crosshair"><div className="absolute inset-0 bg-cyan-500/10 z-10 pointer-events-none mix-blend-color"/><img src={myPhotos[1]} className="w-full h-full object-cover opacity-90" alt="Parallax Asset Left" /></motion.div>
@@ -917,23 +942,23 @@ const BatchEditSection = () => {
   const [isActivated, setIsActivated] = useState(false);
   const [activePreset, setActivePreset] = useState(batchPresets[0]);
   return (
-    <section className="relative w-full py-24 bg-[#000] overflow-hidden z-20 ">
+    <section className="relative w-full py-16 sm:py-24 bg-[#000] overflow-hidden z-20 ">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">In one click'& <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"> Photoshoot</span></motion.h2>
-        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-16 font-light">Save time with batch editing and a rich selection of presets that keep every photo looking stunning.</motion.p>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight">In one click'& <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"> Photoshoot</span></motion.h2>
+        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-slate-400 text-sm sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 sm:mb-16 font-light">Save time with batch editing and a rich selection of presets that keep every photo looking stunning.</motion.p>
         <div className="relative mb-20">
-          <div className="grid grid-cols-5 gap-3 mb-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 mb-2 sm:mb-3">
             {batchPhotos.slice(0, 5).map((img, i) => (<motion.div key={i} className="aspect-[4/3] overflow-hidden rounded-sm bg-zinc-900 "><motion.img animate={{ filter: activePreset.filter }} transition={{ duration: 0.8 }} src={img} className="w-full h-full object-cover" /></motion.div>))}
           </div>
-          <div className="grid grid-cols-4 gap-3 px-[10%]">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 sm:px-[10%]">
             {batchPhotos.slice(5, 9).map((img, i) => (<motion.div key={i} className="aspect-[4/3] overflow-hidden rounded-sm bg-zinc-900 "><motion.img animate={{ filter: activePreset.filter }} transition={{ duration: 0.8 }} src={img} className="w-full h-full object-cover" /></motion.div>))}
           </div>
-          <div className="absolute left-1/2 -bottom-10 -translate-x-1/2 z-30 flex flex-col items-center">
+          <div className="absolute left-1/2 -bottom-12 sm:-bottom-10 -translate-x-1/2 z-30 flex w-[calc(100vw-2rem)] max-w-[720px] flex-col items-center px-2">
             <AnimatePresence mode="wait">
               {!isActivated ? (
-                <motion.button key="action-btn" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} onClick={() => setIsActivated(true)} className="bg-[#fbbc05] hover:bg-[#ffcc33] text-black font-bold text-[11px] tracking-widest px-10 py-4 rounded-md shadow-2xl transition-all uppercase whitespace-nowrap">Edit All Photos At Once</motion.button>
+                <motion.button key="action-btn" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} onClick={() => setIsActivated(true)} className="bg-[#fbbc05] hover:bg-[#ffcc33] text-black font-bold text-[10px] sm:text-[11px] tracking-widest px-5 sm:px-10 py-3 sm:py-4 rounded-md shadow-2xl transition-all uppercase whitespace-nowrap">Edit All Photos At Once</motion.button>
               ) : (
-                <motion.div key="preset-bar" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-1 p-1 bg-black/60 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+                <motion.div key="preset-bar" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex max-w-full items-center gap-1 overflow-x-auto p-1 bg-black/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl no-scrollbar">
                   {batchPresets.map((preset) => (
                     <button key={preset.id} onClick={() => setActivePreset(preset)} className={`relative px-4 py-3 text-[10px] font-bold tracking-widest transition-all rounded-lg overflow-hidden ${activePreset.id === preset.id ? 'text-white' : 'text-slate-500 hover:text-slate-300'}`}>
                       {activePreset.id === preset.id && (<motion.div layoutId="active-pill" className="absolute inset-0 bg-white/10 border border-white/20 rounded-lg z-0" />)}
@@ -1021,7 +1046,9 @@ const App = () => {
         <PremiumShowcaseGallery />
         <InteractiveStats />
         <DiscoverCapabilitiesSection />
-        <FeaturesSection />
+        <div id="features">
+          <FeaturesSection />
+        </div>
         <AIFeaturesShowcase />
         <div className="bg-[#000] py-16 md:py-32 space-y-32 md:space-y-48 border-b border-white/[0.04]">
           <FeatureStepShowcase title="Retouch portrait like a pro in four steps" description="Bring out the best in every face. Enhance skin, refine light, and add depth with intuitive tools that do the hard work for you." image="photo-9.jpg" reverseLayout={false} steps={[{ name: "Original", filter: "none" },{ name: "Skin AI", filter: "contrast(1.05) saturate(1.1) brightness(1.05)" },{ name: "Face AI", filter: "contrast(1.1) saturate(1.15) brightness(1.1)" },{ name: "Lips", filter: "contrast(1.15) saturate(1.3) brightness(1.1)" },{ name: "Color", filter: "contrast(1.2) saturate(1.4) brightness(1.15) sepia(10%) hue-rotate(-5deg)" }]} />
@@ -1033,13 +1060,13 @@ const App = () => {
         <BatchEditSection />
         <CallToActionPricingShowcase />
 
-        <footer className="py-20 relative z-20 border-t border-white/[0.02] bg-[#020202]">
+        <footer className="py-14 sm:py-20 relative z-20 border-t border-white/[0.02] bg-[#020202]">
          <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <div className="grid gap-12 lg:gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] items-start">
             <div>
               <div className="mb-8 font-black text-2xl tracking-tighter text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">Pixxel <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 relative"> OS.</span></div>
               <p className="text-[14px] text-slate-500/80 leading-relaxed mb-8 max-w-[280px] font-medium">Infrastructure grade image orchestration natively rendered in high definition across your visual matrix.</p>
-              <form className="flex max-w-[320px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] rounded-[1rem] p-1 border border-white/10 bg-[#0a0a0a]" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex w-full max-w-[320px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] rounded-[1rem] p-1 border border-white/10 bg-[#0a0a0a]" onSubmit={(e) => e.preventDefault()}>
                 <input type="email" placeholder="Your work email..." className="flex-1 bg-transparent px-4 py-3 text-[14px] text-white outline-none border-none placeholder-slate-600" />
                 <button type="submit" className="rounded-[0.8rem] bg-gradient-to-r from-cyan-400 to-purple-500 text-black px-6 text-[13px] font-bold shadow-md hover:bg-amber-400 transition-colors">Access</button>
               </form>
@@ -1059,7 +1086,7 @@ const App = () => {
             <div>
               <h4 className="text-[12px] font-black text-white mb-6 uppercase tracking-[0.2em] opacity-90">Priority Sync</h4>
               <form onSubmit={handleContactSubmit} className="space-y-3">
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                    <Input placeholder="Ident" value={contactForm.name} onChange={(e) => setContactForm(p => ({ ...p, name: e.target.value }))} className="bg-[#0a0a0a] border-white/10 text-white rounded-xl h-12 text-[14px] flex-1 focus-visible:ring-1 focus-visible:ring-amber-500" required />
                    <Input type="email" placeholder="Terminal@mail.com" value={contactForm.email} onChange={(e) => setContactForm(p => ({ ...p, email: e.target.value }))} className="bg-[#0a0a0a] border-white/10 text-white rounded-xl h-12 text-[14px] flex-[1.5] focus-visible:ring-1 focus-visible:ring-amber-500" required />
                 </div>
@@ -1068,7 +1095,7 @@ const App = () => {
               </form>
             </div>
           </div>
-          <div className="mt-20 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row items-center justify-between gap-6 text-[13px] font-medium text-slate-600">
+          <div className="mt-14 sm:mt-20 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left text-[12px] sm:text-[13px] font-medium text-slate-600">
             <p>Operational Runtime: © {new Date().getFullYear()} Pixxel LLC. Hosted Securely.</p>
             <div className="flex items-center gap-4">
                {[<Twitter key="1"/>, <Instagram key="2"/>, <Linkedin key="3"/>, <Github key="4"/>].map((icon, idx) => (
@@ -1084,7 +1111,7 @@ const App = () => {
 
       <AnimatePresence>
         {isLoggedIn && isScrolled && (
-          <motion.div initial={{ opacity: 0, scale: 0.8, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.8, y: 50, transition: { duration: 0.2 } }} className="fixed bottom-6 right-6 lg:left-6 lg:right-auto z-[100]">
+          <motion.div initial={{ opacity: 0, scale: 0.8, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.8, y: 50, transition: { duration: 0.2 } }} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:left-6 lg:right-auto z-[100]">
             <button onClick={() => setIsUploadModalOpen(true)} className="group flex items-center gap-3 bg-white text-slate-950 pr-5 pl-3 h-[60px] rounded-full shadow-[0_15px_30px_rgba(255,255,255,0.25)] hover:shadow-[0_20px_40px_rgba(255,255,255,0.35)] transition-all duration-400 hover:-translate-y-2 font-bold font-sans tracking-wide">
               <div className="w-11 h-11 bg-[#000] rounded-full flex items-center justify-center text-amber-400 shadow-[inset_0_2px_10px_rgba(251,188,5,0.2)] group-hover:scale-95 transition-transform duration-300">
                 <UploadCloud strokeWidth={2} size={10} className="group-hover:-translate-y-0.5 group-hover:text-amber-300 transition-all"/>
