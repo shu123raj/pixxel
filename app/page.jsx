@@ -109,7 +109,7 @@ const CallToActionPricingShowcase = () => {
 // 🌟 DISCOVER CAPABILITIES SECTION
 // ==========================================
 const discoverFeatures = [
-  { id: "toybox", label: "AI-powered Background Effect", badge: "NEW", badgeColor: "bg-amber-500", icon: (<svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>), video: "Video Project 7.mp4", description: "Transform ordinary portraits into dreamy masterpieces with AI-powered depth-of-field simulation." },
+  { id: "toybox", label: "AI-powered Background Effect", badge: "NEW", badgeColor: "bg-amber-500", icon: (<svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>), video: "https://res.cloudinary.com/do6jlckzy/video/upload/v1783161547/video_project_7_uyghcq.mp4", description: "Transform ordinary portraits into dreamy masterpieces with AI-powered depth-of-field simulation." },
   { id: "bokeh", label: "AI-instant Background change", badge: "NEW", badgeColor: "bg-amber-500", icon: (<svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>), video: "Video Project 6.mp4", description: "Transform ordinary portraits into dreamy masterpieces with AI-powered depth-of-field simulation." },
   { id: "face", label: "Enhance facial features", badge: "IMPROVED", badgeColor: "bg-cyan-600", icon: (<svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>), video: "video project 5.mp4", description: "Refine eyes, lips, and facial contours with precision using intelligent facial landmark detection." },
   { id: "revive", label: "Double-Exposure", badge: "PRO", badgeColor: "bg-amber-500", icon: (<svg viewBox="0 0 24 24" fill="none" className="w-4 h-4" stroke="currentColor" strokeWidth="1.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>), video: "double-exposure.mp4", description: "Restore faded, damaged, or aged photographs to vibrant modern quality with generative AI." },
@@ -456,7 +456,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
   const opacityOffset = useTransform(scrollY, [0, 600], [1, 0]);
 
   const heroVideos = [
-    { src: "Video Project 7.mp4", label: "BokehAI" },
+    { src: "https://res.cloudinary.com/do6jlckzy/video/upload/v1783161547/video_project_7_uyghcq.mp4", label: "BokehAI" },
     { src: "https://res.cloudinary.com/do6jlckzy/video/upload/v1783106848/frontend_wbgog7.mp4",    label: "SkinAI"  },
     { src: "Video Project 6.mp4", label: "FaceAI"  },
   ];
