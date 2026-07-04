@@ -44,7 +44,7 @@ export default function Header() {
   }
   
   const navLinks = [
-    { href: "/#Pixxel' OS", label: "Pixxel' OS" },
+    { href: "/Pixxel", label: "Pixxel' OS" },
     { href: "/#Pixxel for Mobile", label: "Pixxel for Mobile" },
     { href: "/#Marketplace", label: "Marketplace" },
     { href: "/pixxel-os", label: "Blog" },
