@@ -13,6 +13,7 @@ import { SignOutInterceptor } from "@/components/sign-out-interceptor";
 import ScrollPopup from "@/components/scroll-popup";
 import { StoreUserProvider } from "@/components/store-user-provider";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // NAYA IMPORT: Yahan chatbot component laya gaya hai
 import Chatbot from "@/components/chatbot";
@@ -56,6 +57,8 @@ export default function RootLayout({ children }) {
               <StoreUserProvider>
                 <SignOutInterceptor />
                 <Header />
+                <SpeedInsights/>
+                <Analytics/>
                 <StickyBanner />
                 <ScrollPopup />
 
