@@ -83,7 +83,7 @@ export default function DashboardPage() {
 
   // Edit Profile States
   const [showEditProfile, setShowEditProfile] = useState(false);
-  const [editForm, setEditForm] = useState({ name: "", username: "", jobTitle: "" }); // Manual location removed
+  const [editForm, setEditForm] = useState({ name: "", username: "", jobTitle: "" }); 
   
   // 🚀 OPTIMISTIC UPDATE STATE (For Instant Profile Change)
   const [optimisticProfile, setOptimisticProfile] = useState({ name: null, username: null, jobTitle: null });
@@ -111,6 +111,7 @@ export default function DashboardPage() {
   const authHistoryQuery = useConvexQuery(api.users.getAuthHistory) || {};
   const authHistory = Array.isArray(authHistoryQuery.data) ? authHistoryQuery.data : [];
   const automaticLocation = authHistory.find((event) => event.location && event.location !== "unset" && event.location.trim() !== "")?.location;
+  
   // ⚡ INSTANT PROFILE VARIABLES
   const userName = optimisticProfile.name || dbUser?.name || user?.firstName || "User";
   const userJobTitle = optimisticProfile.jobTitle || dbUser?.jobTitle || "Photo Editor & Retoucher";
@@ -322,7 +323,7 @@ export default function DashboardPage() {
       )}
 
       {/* ================= SIDEBAR ================= */}
-      <aside className={`fixed inset-y-0 left-0 z-[100] w-[280px] max-w-[82vw] bg-[#0a0c10] border-r border-white/5 flex flex-col justify-between h-full overflow-y-auto no-scrollbar transition-transform duration-300 lg:static lg:w-[260px] lg:max-w-none lg:translate-x-0 shrink-0 ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+      <aside className={`fixed inset-y-0 left-0 z-[100] w-[280px] max-w-[82vw] bg-[#0a0c10] border-r border-white/5 flex flex-col justify-between h-full overflow-y-auto lg:overflow-y-visible no-scrollbar transition-transform duration-300 lg:static lg:w-[260px] lg:max-w-none lg:translate-x-0 shrink-0 ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
         <div className="p-5 shrink-0">
           <div className="block w-[250px] h-auto object-contain -mt-6 mb-0">
             <div className="relative overflow-visible -ml-1 -mt-14 mb-0">
@@ -389,7 +390,12 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="p-5 space-y-5">
+        {/* ========================================================= */}
+        {/* BOTTOM SECTION: Storage on top, Profile at absolute bottom */}
+        {/* ========================================================= */}
+        <div className="p-5 space-y-4 mt-auto shrink-0">
+          
+          {/* STORAGE & PLAN UPGRADE BOX (Ab upar aa gaya) */}
           <div className="bg-[#12151c] border border-white/5 rounded-2xl p-4">
             <div className="flex justify-between items-center mb-2">
               <span className="text-xs text-white/50 font-medium">Storage</span>
@@ -407,6 +413,7 @@ export default function DashboardPage() {
             </button>
           </div>
 
+          {/* PROFILE BOX (Ab sabse aakhiri me hai jaisa screenshot me hai) */}
           <div 
             onClick={() => handleViewChange("profile")}
             className={`flex items-center justify-between p-3 rounded-2xl cursor-pointer border transition-all ${
@@ -414,7 +421,7 @@ export default function DashboardPage() {
                 ? 'bg-[#141824] border-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.1)]'
                 : isProPlan
                 ? 'bg-gradient-to-r from-amber-400/10 via-cyan-400/10 to-white/[0.04] hover:from-amber-400/15 hover:via-cyan-400/15 border-amber-300/20'
-                : 'bg-white/5 hover:bg-white/10 border-white/5'
+                : 'bg-[#12151c] hover:bg-white/10 border-white/5'
             }`}
           >
             <div className="flex items-center gap-3">
@@ -439,7 +446,7 @@ export default function DashboardPage() {
                 <p className={`mt-0.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] ${
                   isProPlan
                     ? "bg-amber-300/15 text-amber-200 border border-amber-300/20"
-                    : "bg-white/5 text-white/45 border border-white/5"
+                    : "text-white/45"
                 }`}>
                   {isProPlan && <Crown className="h-2.5 w-2.5" />}
                   {userPlan}
@@ -448,6 +455,7 @@ export default function DashboardPage() {
             </div>
             <ChevronRight className={`w-4 h-4 ${currentView === 'profile' ? 'text-cyan-400' : 'text-white/40'}`} />
           </div>
+
         </div>
       </aside>
 
@@ -659,12 +667,12 @@ export default function DashboardPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
-                  <div className="flex items-center gap-4 w-1/3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
+                  <div className="flex items-center gap-4 sm:w-1/3">
                     <Crown className="w-4 h-4 text-white/40" />
                     <span className="text-sm text-white/50">Plan</span>
                   </div>
-                  <div className="flex items-center justify-between w-2/3 pl-4">
+                  <div className="flex items-center justify-between sm:w-2/3 sm:pl-4 min-w-0">
                     <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold ${
                       isProPlan
                         ? "bg-amber-300/15 text-amber-200 border border-amber-300/20"
@@ -676,12 +684,12 @@ export default function DashboardPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
-                  <div className="flex items-center gap-4 w-1/3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
+                  <div className="flex items-center gap-4 sm:w-1/3">
                     <Calendar className="w-4 h-4 text-white/40" />
                     <span className="text-sm text-white/50">Member Since</span>
                   </div>
-                  <div className="flex items-center justify-between w-2/3 pl-4">
+                  <div className="flex items-center justify-between sm:w-2/3 sm:pl-4 min-w-0">
                     <span className="text-sm text-white/90 font-medium">{memberSinceDate}</span>
                   </div>
                 </div>
