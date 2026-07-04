@@ -76,6 +76,7 @@ export default function DashboardPage() {
   // Navigation & UI States 
   const [currentView, setCurrentView] = useState("dashboard"); 
   const [openMenuId, setOpenMenuId] = useState(null);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   
   // Notification States
   const [isNotifOpen, setIsNotifOpen] = useState(false);
@@ -304,16 +305,25 @@ export default function DashboardPage() {
       .slice(0, 6);
   }, [projects]);
 
+  const handleViewChange = (view) => {
+    setCurrentView(view);
+    setIsMobileSidebarOpen(false);
+  };
+
   return (
-    <div className="flex h-screen bg-[#06080c] text-slate-200 font-sans overflow-hidden relative">
+    <div className="flex min-h-screen bg-[#06080c] text-slate-200 font-sans overflow-hidden relative">
       
       {(openMenuId || isNotifOpen) && (
         <div className="fixed inset-0 z-[50]" onClick={() => { setOpenMenuId(null); setIsNotifOpen(false); }} />
       )}
 
+      {isMobileSidebarOpen && (
+        <div className="fixed inset-0 z-[90] bg-black/65 backdrop-blur-sm lg:hidden" onClick={() => setIsMobileSidebarOpen(false)} />
+      )}
+
       {/* ================= SIDEBAR ================= */}
-      <aside className="w-[260px] bg-[#0a0c10] border-r border-white/5 flex flex-col justify-between shrink-0 h-full z-[100]">
-        <div className="p-5">
+      <aside className={`fixed inset-y-0 left-0 z-[100] w-[280px] max-w-[82vw] bg-[#0a0c10] border-r border-white/5 flex flex-col justify-between h-full overflow-y-auto no-scrollbar transition-transform duration-300 lg:static lg:w-[260px] lg:max-w-none lg:translate-x-0 shrink-0 ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <div className="p-5 shrink-0">
           <div className="block w-[250px] h-auto object-contain -mt-6 mb-0">
             <div className="relative overflow-visible -ml-1 -mt-14 mb-0">
               <Link href="/" className="block">
@@ -332,7 +342,7 @@ export default function DashboardPage() {
 
           <nav className="space-y-1.5 -mt-8">
             <button 
-              onClick={() => setCurrentView("dashboard")} 
+              onClick={() => handleViewChange("dashboard")} 
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all ${
                 currentView === "dashboard" ? "bg-[#141824] text-cyan-400 border border-cyan-500/20 font-medium" : "text-white/60 hover:text-white hover:bg-white/5"
               }`}
@@ -349,7 +359,7 @@ export default function DashboardPage() {
             </button>
             
             <button 
-              onClick={() => setCurrentView("projects")} 
+              onClick={() => handleViewChange("projects")} 
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all ${
                 currentView === "projects" ? "bg-[#141824] text-cyan-400 border border-cyan-500/20 font-medium" : "text-white/60 hover:text-white hover:bg-white/5"
               }`}
@@ -357,7 +367,7 @@ export default function DashboardPage() {
               <Folder className="w-4 h-4" /> Projects
             </button>
             
-            <Link href="/templates" className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all">
+            <Link href="/templates" onClick={() => setIsMobileSidebarOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white/60 hover:text-white hover:bg-white/5 transition-all">
               <LayoutTemplate className="w-4 h-4" /> Templates
             </Link>
             
@@ -398,7 +408,7 @@ export default function DashboardPage() {
           </div>
 
           <div 
-            onClick={() => setCurrentView("profile")}
+            onClick={() => handleViewChange("profile")}
             className={`flex items-center justify-between p-3 rounded-2xl cursor-pointer border transition-all ${
               currentView === 'profile'
                 ? 'bg-[#141824] border-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.1)]'
@@ -442,15 +452,26 @@ export default function DashboardPage() {
       </aside>
 
       {/* ================= MAIN CONTENT ================= */}
-      <main className="flex-1 flex flex-col h-full overflow-y-auto bg-[#0a0c10] no-scrollbar relative">
+      <main className="flex-1 flex min-w-0 flex-col h-screen overflow-y-auto bg-[#0a0c10] no-scrollbar relative">
         
         <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
           <div className="absolute top-[-10%] left-[20%] w-[40%] h-[40%] rounded-full bg-cyan-600/20 blur-[120px]" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-violet-600/20 blur-[120px]" />
         </div>
 
-        <header className="h-16 flex items-center justify-between px-8 shrink-0 relative z-[60] border-b border-white/5 bg-[#0a0c10]/80 backdrop-blur-md sticky top-0">
-          <div className="relative w-96 hidden md:block">
+        <header className="min-h-16 flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 shrink-0 relative z-[60] border-b border-white/5 bg-[#0a0c10]/85 backdrop-blur-md sticky top-0">
+          <div className="flex items-center gap-3 lg:hidden">
+            <button
+              onClick={() => setIsMobileSidebarOpen(true)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+              aria-label="Open dashboard menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <span className="font-black text-lg tracking-tight text-white">Pixxel <span className="text-cyan-300">OS</span></span>
+          </div>
+
+          <div className="relative order-3 w-full md:order-none md:block md:w-80 lg:w-96">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-white/30" />
             <input 
               type="text" 
@@ -462,10 +483,10 @@ export default function DashboardPage() {
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-mono text-white/30 bg-white/5 px-1.5 py-0.5 rounded border border-white/10">⌘K</span>
           </div>
 
-          <div className="flex items-center gap-4 ml-auto pr-2">
+          <div className="flex items-center gap-2 sm:gap-4 ml-auto">
             <Link href="/pricing">
-            <button className="flex items-center gap-2 text-xs font-medium bg-[#12151c] border border-white/10 px-4 py-2 rounded-xl hover:bg-white/5 transition-all">
-              <Sparkles className="w-3.5 h-3.5 text-white/60" /> Upgrade Plan
+            <button className="flex items-center gap-2 text-xs font-medium bg-[#12151c] border border-white/10 px-3 sm:px-4 py-2 rounded-xl hover:bg-white/5 transition-all">
+              <Sparkles className="w-3.5 h-3.5 text-white/60" /> <span className="hidden xs:inline">Upgrade Plan</span>
             </button>
             </Link>
             
@@ -489,8 +510,8 @@ export default function DashboardPage() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    style={{ position: 'fixed', top: '70px', right: '30px', zIndex: 999999 }}
-                    className="w-[320px] sm:w-[380px] bg-slate-900 border border-white/10 rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col"
+                    style={{ position: 'fixed', top: '70px', right: 'min(16px, 4vw)', zIndex: 999999 }}
+                    className="w-[calc(100vw-32px)] max-w-[380px] bg-slate-900 border border-white/10 rounded-2xl shadow-[0_30px_100px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="px-4 py-3 border-b border-white/10 bg-slate-800/80 flex items-center justify-between shrink-0">
@@ -553,7 +574,7 @@ export default function DashboardPage() {
             VIEW 3: MY PROFILE 
         ======================================================== */}
         {currentView === "profile" && (
-          <div className="p-8 max-w-[1000px] mx-auto w-full space-y-6 relative z-10 animate-in fade-in duration-500">
+          <div className="p-4 sm:p-6 lg:p-8 max-w-[1000px] mx-auto w-full space-y-5 sm:space-y-6 relative z-10 animate-in fade-in duration-500">
             
             <div className="mb-8">
               <div className="flex items-center text-sm text-white/40 mb-2">
@@ -561,22 +582,22 @@ export default function DashboardPage() {
                 <ChevronRight className="w-3.5 h-3.5 mx-2" />
                 <span className="text-white/80">Profile</span>
               </div>
-              <h1 className="text-3xl font-bold text-white tracking-tight">My Profile</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">My Profile</h1>
             </div>
 
-            <div className="bg-[#11131a] border border-white/5 rounded-3xl p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl relative overflow-hidden">
+            <div className="bg-[#11131a] border border-white/5 rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none"></div>
               
-              <div className="flex items-center gap-8 relative z-10">
+              <div className="flex w-full flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-8 text-center sm:text-left relative z-10">
                 <div className="relative">
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-[3px] border-[#1a1d24] shadow-2xl">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-[3px] border-[#1a1d24] shadow-2xl">
                     <img src={userImage} alt="Profile" className="w-full h-full object-cover" />
                   </div>
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <h2 className="text-2xl font-bold text-white">{userName}</h2>
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white break-words">{userName}</h2>
                     <span className={`inline-flex items-center gap-1.5 text-[10px] font-bold px-2.5 py-1 rounded-md border tracking-wide ${
                       isProPlan
                         ? "bg-amber-300/15 text-amber-200 border-amber-300/25 shadow-[0_0_16px_rgba(251,191,36,0.12)]"
@@ -589,7 +610,7 @@ export default function DashboardPage() {
                   
                   <p className="text-slate-300 text-sm font-medium">{userJobTitle}</p>
                   
-                  <div className="flex items-center gap-1.5 text-white/40 text-xs">
+                  <div className="flex items-center justify-center sm:justify-start gap-1.5 text-white/40 text-xs">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>{displayLocation}</span> {/* AUTOMATIC LOCATION DISPLAY */}
                   </div>
@@ -604,37 +625,37 @@ export default function DashboardPage() {
               </button>
             </div>
 
-            <div className="bg-[#11131a] border border-white/5 rounded-3xl p-8 shadow-xl">
+            <div className="bg-[#11131a] border border-white/5 rounded-3xl p-4 sm:p-8 shadow-xl overflow-hidden">
               <h3 className="text-lg font-bold text-white mb-6">Account Information</h3>
               
               <div className="space-y-1">
-                <div className="flex items-center justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
-                  <div className="flex items-center gap-4 w-1/3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
+                  <div className="flex items-center gap-4 sm:w-1/3">
                     <User className="w-4 h-4 text-white/40" />
                     <span className="text-sm text-white/50">Full Name</span>
                   </div>
-                  <div className="flex items-center justify-between w-2/3 pl-4">
-                    <span className="text-sm text-white/90 font-medium">{userName}</span>
+                  <div className="flex items-center justify-between sm:w-2/3 sm:pl-4 min-w-0">
+                    <span className="text-sm text-white/90 font-medium break-words">{userName}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
-                  <div className="flex items-center gap-4 w-1/3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
+                  <div className="flex items-center gap-4 sm:w-1/3">
                     <AtSign className="w-4 h-4 text-white/40" />
                     <span className="text-sm text-white/50">Username</span>
                   </div>
-                  <div className="flex items-center justify-between w-2/3 pl-4">
+                  <div className="flex items-center justify-between sm:w-2/3 sm:pl-4 min-w-0">
                     <span className="text-sm text-white/90 font-medium">{displayUsername}</span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
-                  <div className="flex items-center gap-4 w-1/3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between p-4 hover:bg-white/[0.02] rounded-2xl transition-colors cursor-default group">
+                  <div className="flex items-center gap-4 sm:w-1/3">
                     <Mail className="w-4 h-4 text-white/40" />
                     <span className="text-sm text-white/50">Email</span>
                   </div>
-                  <div className="flex items-center justify-between w-2/3 pl-4">
-                    <span className="text-sm text-white/90 font-medium">{dbUser?.email || user?.primaryEmailAddress?.emailAddress || "Not provided"}</span>
+                  <div className="flex items-center justify-between sm:w-2/3 sm:pl-4 min-w-0">
+                    <span className="text-sm text-white/90 font-medium break-all">{dbUser?.email || user?.primaryEmailAddress?.emailAddress || "Not provided"}</span>
                   </div>
                 </div>
 
@@ -673,19 +694,19 @@ export default function DashboardPage() {
             VIEW 1: NEW DASHBOARD (Screenshot UI)
         ======================================================== */}
         {currentView === "dashboard" && (
-          <div className="p-8 max-w-[1400px] mx-auto w-full space-y-6 relative z-10 animate-in fade-in duration-500">
+          <div className="p-4 sm:p-6 lg:p-8 max-w-[1400px] mx-auto w-full space-y-5 sm:space-y-6 relative z-10 animate-in fade-in duration-500">
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h1 className="text-3xl font-bold text-white tracking-tight mb-1">Welcome back, {userName} 👋</h1>
                 <p className="text-sm text-white/50">Edit, enhance and create stunning images with the power of AI.</p>
               </div>
-              <button onClick={() => setShowNewProjectModal(true)} className="flex items-center gap-2  bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white px-5 py-2.5 rounded-xl font-medium  transition-all active:scale-95">
+              <button onClick={() => setShowNewProjectModal(true)} className="flex w-full sm:w-auto items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white px-5 py-2.5 rounded-xl font-medium transition-all active:scale-95">
                 <Plus className="w-2 h-2" /> Create New Project
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
               <div className="bg-[#11131a] border border-white/5 rounded-2xl p-5 flex items-center justify-between relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div>
@@ -737,12 +758,12 @@ export default function DashboardPage() {
 
             <div 
               onClick={() => setShowNewProjectModal(true)}
-              className="w-full bg-[#0d1017] border-2 border-dashed border-white/10 hover:border-cyan-500/50 rounded-3xl py-6 px-10 flex flex-col items-center justify-center text-center transition-colors cursor-pointer group"
+              className="w-full bg-[#0d1017] border-2 border-dashed border-white/10 hover:border-cyan-500/50 rounded-3xl py-6 sm:py-8 px-4 sm:px-10 flex flex-col items-center justify-center text-center transition-colors cursor-pointer group"
             >
               <div className="w-12 h-12 rounded-full bg-gradient-to-b from-[#1c2230] to-[#12151c] border border-white/5 flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform">
                 <UploadCloud className="w-5 h-5 text-cyan-400" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-1">Upload New Project</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-1">Upload New Project</h3>
               <p className="text-white/40 text-xs mb-4">Drag and drop your image here, or click to browse</p>
               <button className="flex items-center gap-2 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white px-5 py-2 rounded-xl text-sm font-medium transition-all group-hover:shadow-[0_0_15px_rgba(0,198,255,0.4)]">
                 <ImageIcon className="w-4 h-4" /> Browse Files
@@ -758,13 +779,13 @@ export default function DashboardPage() {
               </div>
               
               {isLoading ? (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
                   {Array(6).fill(0).map((_, i) => (
                     <div key={i} className="h-40 bg-white/5 rounded-2xl animate-pulse" />
                   ))}
                 </div>
               ) : recentProjectsDashboard.length > 0 ? (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pb-4">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4 pb-4">
                   {recentProjectsDashboard.map((project) => (
                     <div 
                       key={project._id} 
