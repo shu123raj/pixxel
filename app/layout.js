@@ -12,6 +12,7 @@ import { Toaster } from "sonner";
 import { SignOutInterceptor } from "@/components/sign-out-interceptor";
 import ScrollPopup from "@/components/scroll-popup";
 import { StoreUserProvider } from "@/components/store-user-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 // NAYA IMPORT: Yahan chatbot component laya gaya hai
 import Chatbot from "@/components/chatbot";
