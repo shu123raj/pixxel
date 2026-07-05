@@ -326,7 +326,7 @@ export default function PricingPage() {
           2. FREQUENTLY ASKED QUESTIONS SECTION (From Sky Page)
           ========================================== */}
       <section className="py-24 bg-[#050505] relative overflow-hidden ">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-r from-[#ffb400]/5 to-[#ffb400]/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-r from-[#6366F1]/5 to-[#6366F1]/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -336,7 +336,7 @@ export default function PricingPage() {
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-[-0.04em]">
               Frequently Asked
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#ffb400] to-orange-500">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
                 Questions
               </span>
             </h2>
@@ -361,8 +361,8 @@ export default function PricingPage() {
                     {faq.question}
                   </span>
 
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full bg-[#ffb400]/10 border border-[#ffb400]/20 transition-all duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
-                    <span className="text-[#ffb400] text-xl font-semibold">+</span>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full bg-[#6366F1]/10 border border-[#6366F1]/20 transition-all duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
+                    <span className="text-[#6366F1] text-xl font-semibold">+</span>
                   </div>
                 </button>
 

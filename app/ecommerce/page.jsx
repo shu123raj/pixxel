@@ -150,20 +150,29 @@ export default function EcommerceEditorPage() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight leading-[1.1] mb-6">
-            E-commerce <br/> photo editor
+          <h1 className="text-5xl md:text-6xl lg:text-[60px] font-bold tracking-tight leading-[1.1] mb-6">
+            E-commerce <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 relative">Photo Editor</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/80 font-light mb-10 max-w-lg leading-relaxed">
             Use e-commerce image editing to improve image quality by adjusting brightness, contrast, sharpness, and color balance. Make your products look more vibrant and attractive with Pixxel OS.
           </p>
           
-         <Link href="/pricing" className="w-full sm:w-auto px-6 sm:px-0">
-            <button
-              className="w-full sm:w-auto font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[1px] active:scale-95 bg-gradient-to-r from-cyan-400 to-purple-500 text-black text-[12px] sm:text-[13px] px-10 py-4 sm:px-24 sm:py-5 rounded-lg shadow-[0_6px_28px_rgba(13,78,88,0.14),0_2px_8px_rgba(168,85,247,0.2)]"
-            >
-              VIEW PLANS
-            </button>
-          </Link>
+         <Link href="/pricing">
+                    <button
+                      className="font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95"
+                      style={{
+                        background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
+                        color: "#000000",
+                        fontSize: "12px",
+                        padding: "13px 40px",
+                        borderRadius: "4px",
+                        boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      VIEW PLANS
+                    </button>
+                  </Link>
         </motion.div>
       </section>
 
@@ -173,7 +182,7 @@ export default function EcommerceEditorPage() {
       <section className="py-24 px-4 md:px-10 text-center flex flex-col items-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
-            Luminar Neo for E-commerce in action
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 relative">Pixxel' os</span> for E-commerce in action
           </h2>
           <p className="text-white/60 text-lg font-light max-w-2xl mx-auto">
             Enhance your e-commerce presence by making your product images more appealing and professional.
@@ -291,7 +300,7 @@ export default function EcommerceEditorPage() {
           
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
-              Navigating the landscape of <br className="hidden md:block"/>
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 relative"> Navigating the landscape of</span> <br className="hidden md:block"/>
               e-commerce product photo editing
             </h2>
             <p className="text-white/70 text-lg font-light max-w-2xl mx-auto">
@@ -343,7 +352,7 @@ export default function EcommerceEditorPage() {
      <section className="py-24 px-4 md:px-10 text-center flex flex-col items-center">
   <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-12">
     <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
-      Find Presets with AI assistance
+      Find Presets with <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 relative">AI assistance</span>
     </h2>
     <p className="text-white/60 text-lg font-light max-w-xl mx-auto">
       AI suggests the perfect Presets for each image. <br/> For instantly stunning results.
@@ -376,7 +385,7 @@ export default function EcommerceEditorPage() {
           8. PLUGIN SECTION (Screenshot 8)
       ========================================== */}
       <section className="py-32 relative overflow-hidden bg-black text-center px-4 flex flex-col items-center justify-center">
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#ffb400]/10 blur-[120px] rounded-full pointer-events-none" />
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#8B5CF6]/10 blur-[120px] rounded-full pointer-events-none" />
          
          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative z-10 flex flex-col items-center">
             <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 mb-8">
@@ -388,17 +397,28 @@ export default function EcommerceEditorPage() {
             </h2>
 
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-sm font-medium text-white/80 mb-12">
-               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#ffb400] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> High-performance image editor</span>
-               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#ffb400] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> 24/7 technical support</span>
-               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#ffb400] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> 30-day money back guarantee</span>
-               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#ffb400] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> Join our communities</span>
+               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#8B5CF6] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> High-performance image editor</span>
+               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#8B5CF6] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> 24/7 technical support</span>
+               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#8B5CF6] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> 30-day money back guarantee</span>
+               <span className="flex items-center gap-2"><div className="w-5 h-5 rounded-full bg-[#8B5CF6] flex items-center justify-center"><Check size={12} className="text-black stroke-[3]"/></div> Join our communities</span>
             </div>
 
             <Link href="/pricing">
-              <button className="bg-[#ffb400] text-black font-bold uppercase tracking-widest text-[13px] px-12 py-4 rounded-full hover:bg-[#e6a200] transition-colors shadow-[0_0_30px_rgba(255,180,0,0.2)]">
-                VIEW PLANS
-              </button>
-            </Link>
+                    <button
+                      className="font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95"
+                      style={{
+                        background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
+                        color: "#000000",
+                        fontSize: "12px",
+                        padding: "13px 40px",
+                        borderRadius: "4px",
+                        boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      VIEW PLANS
+                    </button>
+                  </Link>
          </motion.div>
       </section>
 
@@ -471,7 +491,7 @@ export default function EcommerceEditorPage() {
       {/* 10. FAQ SECTION */}
       {/* ============================================================== */}
       <section className="py-24 bg-[#050505] relative overflow-hidden ">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-r from-[#ffb400]/5 to-[#ffb400]/10 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-r from-[#8B5CF6]/5 to-[#8B5CF6]/10 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -481,7 +501,7 @@ export default function EcommerceEditorPage() {
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-[-0.04em]">
               Frequently Asked
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#ffb400] to-orange-500">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 ">
                 Questions
               </span>
             </h2>
@@ -555,7 +575,7 @@ export default function EcommerceEditorPage() {
             <p className="text-[14px] text-slate-500/80 leading-relaxed mb-8 max-w-[280px] font-medium">Infrastructure grade image orchestration natively rendered in high definition across your visual matrix.</p>
             <form className="flex max-w-[320px] shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] rounded-[1rem] p-1 border border-white/10 bg-[#0a0a0a]" onSubmit={(e) => e.preventDefault()}>
               <input type="email" placeholder="Your work email..." className="flex-1 bg-transparent px-4 py-3 text-[14px] text-white outline-none border-none placeholder-slate-600" />
-              <button type="submit" className="rounded-[0.8rem] bg-[#ffb400] text-black px-6 text-[13px] font-bold shadow-md hover:bg-[#e6a200] transition-colors">Access</button>
+              <button type="submit" className="rounded-[0.8rem] bg-gradient-to-r from-cyan-400 to-purple-500  text-black px-6 text-[13px] font-bold shadow-md hover:bg-[#e6a200] transition-colors">Access</button>
             </form>
           </div>
 
@@ -603,7 +623,7 @@ export default function EcommerceEditorPage() {
               <Button 
                 type="submit" 
                 disabled={isSubmitting} 
-                className="w-full bg-[#ffb400] hover:bg-[#e6a200] text-black font-extrabold tracking-widest uppercase text-[11px] h-12 rounded-xl transition-all border border-white/10"
+                className="w-full bg-gradient-to-r from-cyan-400 to-purple-500  hover:bg-[#e6a200] text-black font-extrabold tracking-widest uppercase text-[11px] h-12 rounded-xl transition-all border border-white/10"
               >
                 {isSubmitting ? "TRANSMITTING..." : "OPEN TICKET PROTOCOL"}
               </Button>

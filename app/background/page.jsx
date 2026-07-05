@@ -498,6 +498,9 @@ export default function BackgroundRemovalPage() {
                           <Link href="/family" className="flex items-center text-[13px] text-[#a1a1aa] hover:text-white transition-colors py-2">
                             Family Photography
                           </Link>
+                          <Link href="/ecommerce" className="flex items-center text-[13px] text-[#a1a1aa] hover:text-white transition-colors py-2">
+                            E-Com Photography
+                          </Link>
                         </div>
                       </div>
 
