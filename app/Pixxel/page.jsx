@@ -170,13 +170,22 @@ export default function EditorLandingPage() {
             Luminar Neo – your easy, AI-powered photo editing software for macOS & Windows. Use as standalone or plugin.
           </p>
           
-          <Link href="/pricing" className="w-full sm:w-auto px-6 sm:px-0">
-            <button
-              className="w-full sm:w-auto font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95 bg-gradient-to-r from-cyan-400 to-purple-500 text-black text-[12px] sm:text-[13px] px-10 py-4 sm:px-24 sm:py-5 rounded-lg shadow-[0_6px_28px_rgba(13,78,88,0.14),0_2px_8px_rgba(168,85,247,0.2)]"
-            >
-              VIEW PLANS
-            </button>
-          </Link>
+          <Link href="/pricing">
+                    <button
+                      className="font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95"
+                      style={{
+                        background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
+                        color: "#000000",
+                        fontSize: "12px",
+                        padding: "13px 60px",
+                        borderRadius: "4px",
+                        boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      VIEW PLANS
+                    </button>
+                  </Link>
           
           <div className="mt-8 text-xs sm:text-sm font-bold tracking-widest text-white/80 flex items-center gap-2">
             01<span className="text-white/40">d</span> : 18<span className="text-white/40">h</span> : 42<span className="text-white/40">m</span> : 04<span className="text-white/40">s</span>
@@ -422,20 +431,22 @@ export default function EditorLandingPage() {
         
         {/* CTA Button below mockup */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex flex-col items-center mt-10 sm:mt-12 px-4">
-         <Link href="/pricing" className="w-full sm:w-auto">
-          <button
-            className="w-full sm:w-auto font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95 text-black"
-            style={{
-              background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
-              fontSize: "12px",
-              padding: "16px 80px",
-              borderRadius: "8px",
-              boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
-            }}
-          >
-            VIEW PLANS
-          </button>
-        </Link>
+         <Link href="/pricing">
+                    <button
+                      className="font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95"
+                      style={{
+                        background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
+                        color: "#000000",
+                        fontSize: "12px",
+                        padding: "13px 60px",
+                        borderRadius: "4px",
+                        boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      VIEW PLANS
+                    </button>
+                  </Link>
           <div className="mt-5 text-xs sm:text-sm font-bold tracking-widest text-white/80">
             01d : 18h : 41m : 06s
           </div>
