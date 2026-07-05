@@ -305,7 +305,7 @@ export default function EditorLandingPage() {
                 max="100" 
                 value={accentValue} 
                 onChange={(e) => setAccentValue(Number(e.target.value))}
-                className="w-full h-1.5 sm:h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#ffb400]"
+                className="w-full h-1.5 sm:h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#6366F1]"
               />
             </div>
           </div>
@@ -346,7 +346,7 @@ export default function EditorLandingPage() {
                 max="100" 
                 value={fogValue} 
                 onChange={(e) => setFogValue(Number(e.target.value))}
-                className="w-full h-1.5 sm:h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#ffb400]"
+                className="w-full h-1.5 sm:h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#6366F1]"
               />
             </div>
           </div>
@@ -386,7 +386,7 @@ export default function EditorLandingPage() {
           whileInView="visible" 
           viewport={{ once: true, margin: "-50px" }} 
           variants={fadeUp} 
-          className="max-w-[1200px] mx-auto bg-gradient-to-br from-[#3d2a0b] via-[#1a1104] to-[#0a0a0c] rounded-[1.5rem] sm:rounded-[2rem] border border-[#ffb400]/20 p-8 sm:p-10 md:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-12 shadow-2xl"
+          className="max-w-[1200px] mx-auto bg-black rounded-[1.5rem] sm:rounded-[2rem] border border-[#6366F1]/20 p-8 sm:p-10 md:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-12 shadow-2xl"
         >
           {/* Laptop Image */}
           <div className="w-full md:w-1/2">
@@ -524,7 +524,7 @@ export default function EditorLandingPage() {
       {/* 9. FAQ SECTION (From Backend/Sky Page) */}
       {/* ============================================================== */}
       <section className="py-20 sm:py-24 bg-[#050505] relative overflow-hidden border-t border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[500px] md:h-[700px] bg-gradient-to-r from-[#ffb400]/5 to-[#ffb400]/10 blur-[100px] md:blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[500px] md:h-[700px] bg-gradient-to-r from-[#6366F1]/5 to-[#6366F1]/10 blur-[100px] md:blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12 sm:mb-16">
@@ -534,7 +534,7 @@ export default function EditorLandingPage() {
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-[-0.04em]">
               Frequently Asked <br className="hidden sm:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb400] to-orange-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
                Questions
               </span>
             </h2>
@@ -564,8 +564,8 @@ export default function EditorLandingPage() {
                   <span className="text-white font-medium text-sm sm:text-[15px] md:text-[16px] tracking-tight pr-4">
                     {faq.question}
                   </span>
-                  <div className={`shrink-0 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ffb400]/10 border border-[#ffb400]/20 transition-transform duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
-                    <span className="text-[#ffb400] text-lg sm:text-xl font-semibold">+</span>
+                  <div className={`shrink-0 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#6366F1]/10 border border-[#6366F1]/20 transition-transform duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
+                    <span className="text-[#6366F1] text-lg sm:text-xl font-semibold">+</span>
                   </div>
                 </button>
 
