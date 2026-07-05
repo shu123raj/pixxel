@@ -547,8 +547,8 @@ export default function EcommerceEditorPage() {
                     {faq.question}
                   </span>
 
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full bg-[#ffb400]/10 border border-[#ffb400]/20 transition-all duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
-                    <span className="text-[#ffb400] text-xl font-semibold">+</span>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full bg-[#6366F1]/10 border border-[#6366F1]/20 transition-all duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
+                    <span className="text-[#6366F1] text-xl font-semibold">+</span>
                   </div>
                 </button>
 
