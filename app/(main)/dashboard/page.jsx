@@ -323,10 +323,10 @@ export default function DashboardPage() {
       )}
 
       {/* ================= SIDEBAR ================= */}
-      <aside className={`fixed inset-y-0 left-0 z-[100] w-[280px] max-w-[82vw] bg-[#0a0c10] border-r border-white/5 flex flex-col justify-between h-full overflow-y-auto lg:overflow-y-visible no-scrollbar transition-transform duration-300 lg:static lg:w-[260px] lg:max-w-none lg:translate-x-0 shrink-0 ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <div className="p-5 shrink-0">
-          <div className="block w-[250px] h-auto object-contain -mt-6 mb-0">
-            <div className="relative overflow-visible -ml-1 -mt-14 mb-0">
+      <aside className={`fixed inset-y-0 left-0 z-[100] w-[280px] max-w-[82vw] bg-[#0a0c10] border-r border-white/5 flex flex-col h-full overflow-y-auto overflow-x-hidden lg:static lg:h-screen lg:w-[260px] lg:max-w-none lg:translate-x-0 shrink-0 no-scrollbar transition-transform duration-300 ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <div className="min-w-0 p-5 shrink-0 lg:flex-1">
+          <div className="block w-full max-w-[210px] h-auto object-contain -mt-6 mb-0">
+            <div className="relative -mt-14 mb-0">
               <Link href="/" className="block">
                 <Image
                   src="/logo-text.png"
@@ -393,7 +393,7 @@ export default function DashboardPage() {
         {/* ========================================================= */}
         {/* BOTTOM SECTION: Storage on top, Profile at absolute bottom */}
         {/* ========================================================= */}
-        <div className="p-5 space-y-4 mt-auto shrink-0">
+        <div className="p-5 space-y-4 mt-auto shrink-0 lg:pb-6">
           
           {/* STORAGE & PLAN UPGRADE BOX (Ab upar aa gaya) */}
           <div className="bg-[#12151c] border border-white/5 rounded-2xl p-4">
@@ -488,7 +488,7 @@ export default function DashboardPage() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-[#12151c] border border-white/5 rounded-xl pl-10 pr-12 py-2 text-sm text-white focus:outline-none focus:border-white/20 transition-colors"
             />
-            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-mono text-white/30 bg-white/5 px-1.5 py-0.5 rounded border border-white/10">⌘K</span>
+            <span className="absolute right-3 top-1/2 hidden -translate-y-1/2 text-[10px] font-mono text-white/30 bg-white/5 px-1.5 py-0.5 rounded border border-white/10 sm:inline">⌘K</span>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-4 ml-auto">
@@ -706,11 +706,11 @@ export default function DashboardPage() {
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h1 className="text-3xl font-bold text-white tracking-tight mb-1">Welcome back, {userName} 👋</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1">Welcome back, {userName}</h1>
                 <p className="text-sm text-white/50">Edit, enhance and create stunning images with the power of AI.</p>
               </div>
               <button onClick={() => setShowNewProjectModal(true)} className="flex w-full sm:w-auto items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 text-white px-5 py-2.5 rounded-xl font-medium transition-all active:scale-95">
-                <Plus className="w-2 h-2" /> Create New Project
+                <Plus className="w-4 h-4" /> Create New Project
               </button>
             </div>
 
@@ -864,11 +864,11 @@ export default function DashboardPage() {
             VIEW 2: PROJECTS MANAGER (Old Dashboard Code)
         ======================================================== */}
         {currentView === "projects" && (
-          <div className="p-6 md:p-8 relative z-10 animate-in fade-in duration-500">
+          <div className="p-4 sm:p-6 lg:p-8 relative z-10 animate-in fade-in duration-500">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-8 lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-2xl mb-8"
+              className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 p-5 sm:p-8 lg:rounded-[2.5rem] lg:p-10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-2xl mb-6 sm:mb-8"
             >
               <div className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-cyan-500/20 blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
               
@@ -877,7 +877,7 @@ export default function DashboardPage() {
                   <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-medium text-cyan-300 mb-4">
                     <Sparkles className="h-4 w-4" /> Premium Workspace
                   </div>
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 pb-2 leading-tight">
+                  <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 pb-2 leading-tight">
                     Manage your creativity with AI precision.
                   </h1>
                   <p className="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed font-light">
@@ -887,10 +887,10 @@ export default function DashboardPage() {
 
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full lg:w-[35rem]">
                   {statCards.map((stat, i) => (
-                    <div key={i} className="group relative rounded-2xl border border-white/10 bg-slate-950/50 p-4 backdrop-blur-md overflow-hidden hover:border-white/20 hover:bg-slate-900/80 transition-all">
+                    <div key={i} className="group relative rounded-2xl border border-white/10 bg-slate-950/50 p-3 sm:p-4 backdrop-blur-md overflow-hidden hover:border-white/20 hover:bg-slate-900/80 transition-all">
                       <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${stat.color} opacity-0 blur-2xl group-hover:opacity-20 rounded-full transition-opacity`} />
                       <p className={`text-[10px] font-bold uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r ${stat.color}`}>{stat.label}</p>
-                      <p className="mt-2 text-2xl font-bold text-white">{stat.value}</p>
+                      <p className="mt-2 text-xl sm:text-2xl font-bold text-white">{stat.value}</p>
                       <p className="mt-1 text-xs text-slate-400 truncate">{stat.desc}</p>
                     </div>
                   ))}
@@ -901,7 +901,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-[260px_1fr] xl:grid-cols-[280px_1fr]">
               <motion.div 
                 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-                className={`${mobileFiltersOpen ? "block" : "hidden"} lg:block sticky top-24 h-fit rounded-3xl border border-white/10 bg-slate-900/30 p-5 backdrop-blur-xl shadow-2xl flex flex-col z-20`}
+                className={`${mobileFiltersOpen ? "block" : "hidden"} lg:block lg:sticky lg:top-24 h-fit rounded-3xl border border-white/10 bg-slate-900/30 p-5 backdrop-blur-xl shadow-2xl flex flex-col z-20`}
               >
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
@@ -996,17 +996,17 @@ export default function DashboardPage() {
                 <div className="flex flex-col gap-6 mb-8">
                   <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                     <div>
-                      <h2 className="text-3xl font-extrabold text-white mb-2 flex items-center gap-2">
-                        <LayoutGrid className="text-cyan-400 w-8 h-8" /> 
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 flex items-center gap-2">
+                        <LayoutGrid className="text-cyan-400 w-6 h-6 sm:w-8 sm:h-8 shrink-0" /> 
                         {selectedFolderId ? folderMap[selectedFolderId]?.name : "All Projects"}
                       </h2>
                       <p className="text-slate-400">Design, edit, and manage your AI generations.</p>
                     </div>
-                    <div className="flex gap-3">
-                      <button onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)} className="lg:hidden p-3 bg-slate-800 hover:bg-slate-700 text-white border border-white/10 rounded-xl flex items-center gap-2">
+                    <div className="flex w-full flex-col gap-3 xs:flex-row sm:w-auto">
+                      <button onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)} className="lg:hidden p-3 bg-slate-800 hover:bg-slate-700 text-white border border-white/10 rounded-xl flex items-center justify-center gap-2">
                         <Menu className="h-4 w-4" /> Filters
                       </button>
-                      <Button onClick={() => setShowNewProjectModal(true)} className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white rounded-xl gap-2 shadow-[0_0_20px_rgba(6,182,212,0.3)] px-4">
+                      <Button onClick={() => setShowNewProjectModal(true)} className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white rounded-xl gap-2 shadow-[0_0_20px_rgba(6,182,212,0.3)] px-4 w-full xs:w-auto">
                         <Plus className="h-5 w-5" /> New
                       </Button>
                     </div>
@@ -1054,7 +1054,7 @@ export default function DashboardPage() {
       <NewProjectModal isOpen={showNewProjectModal} onClose={() => setShowNewProjectModal(false)} />
 
       <Dialog open={!!projectToMove} onOpenChange={() => setProjectToMove(null)}>
-        <DialogContent className="max-w-md bg-[#0a0c10]/95 backdrop-blur-3xl border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-3xl p-0 overflow-hidden">
+        <DialogContent className="w-[calc(100vw-2rem)] max-w-md bg-[#0a0c10]/95 backdrop-blur-3xl border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-3xl p-0 overflow-hidden">
           <div className="h-1.5 w-full bg-gradient-to-r from-cyan-400 to-blue-500"></div>
           <div className="p-6">
             <DialogHeader className="mb-6">
@@ -1118,7 +1118,7 @@ export default function DashboardPage() {
           EDIT PROFILE MODAL
       ======================================================== */}
       <Dialog open={showEditProfile} onOpenChange={setShowEditProfile}>
-        <DialogContent className="max-w-md bg-[#0a0c10]/95 backdrop-blur-3xl border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-3xl p-0 overflow-hidden">
+        <DialogContent className="w-[calc(100vw-2rem)] max-w-md bg-[#0a0c10]/95 backdrop-blur-3xl border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-3xl p-0 overflow-hidden">
           <div className="h-1.5 w-full bg-gradient-to-r from-[#22d3ee] to-[#a855f7]"></div>
           <div className="p-6">
             <DialogHeader className="mb-4">
@@ -1192,14 +1192,14 @@ export default function DashboardPage() {
 // ==========================================
 function EmptyState({ onCreateProject, hasFilters }) {
   return (
-    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center py-24 px-4 text-center border border-white/5 border-dashed rounded-3xl bg-slate-900/20 backdrop-blur-sm mt-4">
+    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center justify-center py-16 sm:py-24 px-4 text-center border border-white/5 border-dashed rounded-3xl bg-slate-900/20 backdrop-blur-sm mt-4">
       <div className="relative mb-8">
         <div className="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full animate-pulse" />
         <div className="relative w-24 h-24 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 flex items-center justify-center shadow-2xl">
           <ImageIcon className="h-10 w-10 text-cyan-400" />
         </div>
       </div>
-      <h3 className="text-2xl font-bold text-white mb-3">{hasFilters ? "No matches found" : "Your canvas is empty"}</h3>
+      <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{hasFilters ? "No matches found" : "Your canvas is empty"}</h3>
       <p className="text-base text-slate-400 mb-8 max-w-sm mx-auto">
         {hasFilters ? "Try adjusting your search terms or folder filters." : "Start your creative journey by uploading an image or creating a blank canvas."}
       </p>
