@@ -657,22 +657,7 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
         className="relative z-50 mb-5 flex w-full justify-center px-3 md:hidden"
         aria-label="Mobile home navigation"
       >
-        <div className="flex max-w-full items-center gap-2 overflow-x-auto rounded-full border border-white/10 bg-black/45 p-1.5 shadow-[0_14px_35px_rgba(0,0,0,0.35)] backdrop-blur-xl no-scrollbar">
-          {[
-            { href: "#overview", label: "Overview" },
-            { href: "#features", label: "Features" },
-            { href: "/pricing", label: "Pricing" },
-            { href: "/demo", label: "What's new" },
-          ].map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="whitespace-nowrap rounded-full px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-slate-300 transition hover:bg-white/10 hover:text-white"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
+        
       </motion.nav>
       <motion.div
         initial={{ opacity: 0, y: -12 }}
