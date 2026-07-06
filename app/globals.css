@@ -44,6 +44,20 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@theme {
+  /* Extra-small breakpoint (480px) — page.jsx mein xs: classes iske bina kaam nahi karti */
+  --breakpoint-xs: 30rem;
+}
+
+/* Horizontal scroll strips (mobile nav pills, preset bar) — scrollbar hide but scrollable */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
