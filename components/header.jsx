@@ -12,6 +12,39 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
+// 🌟 MOBILE MENU GROUPS (Naye Navbar se add kiya gaya for Mobile View)
+const mobileNavGroups = [
+  {
+    title: "Features",
+    links: [
+      { label: "Bokeh AI", href: "/bokeh", badge: "NEW" },
+      { label: "Sky AI", href: "/sky" },
+      { label: "Face AI", href: "/face", badge: "NEW" },
+      { label: "Structure AI", href: "/features/structure" },
+      { label: "Skin AI", href: "/skin", badge: "NEW" },
+      { label: "Enhance AI", href: "/features/enhance" },
+      { label: "GenErase", href: "/features/erase" },
+    ],
+  },
+  {
+    title: "Use Cases",
+    links: [
+      { label: "Landscape Photography", href: "/landscape" },
+      { label: "Wildlife Photography", href: "/wildlife" },
+      { label: "Family Photography", href: "/family" },
+      { label: "E-Com Photography", href: "/ecommerce" },
+    ],
+  },
+  {
+    title: "Pro Tools",
+    links: [
+      { label: "Upscale AI", href: "/pro/upscale" },
+      { label: "Background Removal", href: "/background" },
+      { label: "HDR Merge", href: "/hdr" },
+    ],
+  },
+];
+
 export default function Header() {
   const { isLoading } = useStoreUser();
   const path = usePathname();
@@ -21,7 +54,7 @@ export default function Header() {
   // 🌟 NAYA STATE: Header hide karne ke liye
   const [isHidden, setIsHidden] = useState(false);
 
-  // Scroll detection
+  // Scroll detection (Aapka original logic)
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -39,10 +72,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 🌟 Mobile menu open hone par background scroll lock karein
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
   if (path.includes("/editor")) {
     return null; // Hide header completely on editor page
   }
   
+  // Desktop Nav Links (Aapka original)
   const navLinks = [
     { href: "/Pixxel", label: "Pixxel' OS" },
     { href: "/#Pixxel for Mobile", label: "Pixxel for Mobile" },
@@ -58,9 +98,12 @@ export default function Header() {
 
   return (
     <>
+      {/* ========================================== */}
+      {/* 🌟 DESKTOP HEADER (BINA KISI CHANGE KE 100% SAME) */}
+      {/* ========================================== */}
       <motion.header
         initial={{ y: -100 }}
-        animate={{ y: isHidden ? -100 : 0 }} // 🌟 Yahan agar isHidden true hai, toh header upar jaakar chup jayega
+        animate={{ y: isHidden ? -100 : 0 }} 
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-300 ${
           isScrolled
@@ -170,94 +213,114 @@ export default function Header() {
         )}
       </motion.header>
 
-      {/* 4. MOBILE FULLSCREEN MENU */}
+      {/* ========================================== */}
+      {/* 🌟 4. MOBILE FULLSCREEN MENU (NAYA PREMIUM DESIGN) */}
+      {/* ========================================== */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
             <motion.div
+              key="mobile-menu-overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm md:hidden"
             />
             
             <motion.div
+              key="mobile-menu-drawer"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm z-[101] bg-[#050505] border-l border-white/5 flex flex-col md:hidden"
+              transition={{ type: "tween", duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
+              className="fixed top-0 right-0 bottom-0 w-[min(360px,88vw)] max-w-sm z-[101] bg-[#0a0a0f] border-l border-white/10 shadow-[-30px_0_80px_rgba(0,0,0,0.8)] flex flex-col md:hidden"
+              role="dialog"
+              aria-label="Navigation menu"
             >
-              <div className="flex items-center justify-between p-6 border-b border-white/5">
-                <Image
-                  src="/logo-text.png"
-                  alt="Pixxel Logo"
-                  className="h-8 w-auto object-contain"
-                  width={200}
-                  height={80}
-                />
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between p-5 border-b border-white/[0.07]">
+                <span className="font-black text-xl tracking-tighter text-white">
+                  Pixxel <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">OS.</span>
+                </span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-zinc-400 hover:text-white transition-colors"
+                  className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-colors hover:bg-white/10 hover:text-white active:scale-95"
                 >
-                  <X className="w-6 h-6" />
+                  <X size={18} />
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6">
-                {showCenterLinks && navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
+              {/* Drawer Links */}
+              <div className="flex-1 overflow-y-auto custom-scrollbar px-5 py-6 overscroll-contain">
+                <div className="flex flex-col gap-2 mb-8">
+                  {showCenterLinks && navLinks.slice(0, 3).map((item) => (
                     <Link
-                      href={link.href}
+                      key={item.label}
+                      href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between text-lg text-zinc-400 font-medium hover:text-white transition-colors"
+                      className="flex items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white bg-white/[0.03] border border-white/[0.05] transition-colors hover:bg-white/[0.08]"
                     >
-                      {link.label}
-                      <ChevronRight className="w-4 h-4 opacity-50" />
+                      {item.label}
+                      <ChevronRight size={15} className="text-slate-500" />
                     </Link>
-                  </motion.div>
-                ))}
+                  ))}
+                </div>
 
-                <Authenticated>
-                  {showCenterLinks && (
-                    <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
-                      <Link
-                        href="/dashboard"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between text-lg text-white font-medium mt-4 pt-6 border-t border-white/5"
-                      >
-                        <div className="flex items-center gap-3">
-                          <LayoutDashboard className="w-5 h-5" />
-                          Dashboard
-                        </div>
-                        <ChevronRight className="w-4 h-4 opacity-50" />
-                      </Link>
-                    </motion.div>
-                  )}
-                </Authenticated>
+                {/* Render Mega Menu Groups for Mobile */}
+                {mobileNavGroups.map((group) => (
+                  <div key={group.title} className="mb-6">
+                    <h4 className="text-[10px] text-zinc-500 font-bold tracking-[0.18em] uppercase border-b border-white/10 pb-2.5 mb-2 px-1">
+                      {group.title}
+                    </h4>
+                    <div className="flex flex-col">
+                      {group.links.map((link) => (
+                        <Link
+                          key={link.label}
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center rounded-lg px-3 py-3 text-[14px] text-slate-300 transition-colors hover:bg-white/[0.06] hover:text-white"
+                        >
+                          {link.label}
+                          {link.badge && (
+                            <span className="ml-2 px-1.5 py-[2px] text-black text-[9px] font-black rounded-sm bg-gradient-to-r from-cyan-400 to-purple-500">
+                              {link.badge}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <Unauthenticated>
-                <div className="p-6 border-t border-white/5 flex flex-col gap-4">
+              {/* Drawer Footer: Auth Actions (Aapka Clerk Login) */}
+              <div className="px-5 py-4 border-t border-white/[0.07] bg-[#0c0c12] flex flex-col gap-3">
+                <Authenticated>
+                  {showCenterLinks && (
+                    <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                      <Button className="w-full flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white h-12 rounded-lg font-medium transition-colors border border-white/5">
+                        <LayoutDashboard className="w-4 h-4" /> Go to Dashboard
+                      </Button>
+                    </Link>
+                  )}
+                </Authenticated>
+
+                <Unauthenticated>
                   <SignInButton>
-                    <button className="flex items-center justify-center gap-2 w-full text-zinc-300 hover:text-white transition-colors h-12 font-medium" onClick={() => setMobileMenuOpen(false)}>
+                    <button className="flex items-center justify-center gap-2 w-full text-zinc-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/5 transition-colors h-11 rounded-lg font-medium" onClick={() => setMobileMenuOpen(false)}>
                       <User className="w-4 h-4" /> Log In
                     </button>
                   </SignInButton>
                   
                   <SignUpButton>
-                    <Button className="w-full bg-white text-black hover:bg-zinc-200 h-12 rounded-md font-semibold" onClick={() => setMobileMenuOpen(false)}>
-                      Get Started
+                    <Button className="w-full bg-white text-black hover:bg-zinc-200 h-11 rounded-lg font-bold transition-all" onClick={() => setMobileMenuOpen(false)}>
+                      Get Started for Free
                     </Button>
                   </SignUpButton>
-                </div>
-              </Unauthenticated>
+                </Unauthenticated>
+              </div>
             </motion.div>
           </>
         )}

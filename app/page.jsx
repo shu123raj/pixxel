@@ -20,40 +20,7 @@ import { useDropzone } from "react-dropzone";
 import { usePlanAccess } from "@/hooks/use-plan-access";
 import { UpgradeModal } from "@/components/upgrade-modal";
 import { NewProjectModal } from "./(main)/dashboard/_components/new-project-modal";
-import { Sparkles, Hexagon, Zap, Layers, Wand2, UploadCloud, Loader2, ChevronLeft, ChevronRight, GripVertical, Sliders, ShieldCheck, Star, BadgeCheck, PlayCircle, ChevronDown, Check, Menu, X } from "lucide-react";
-
-// 🌟 Saare nav links ek jagah — mobile drawer isi se banta hai (desktop mega-menu jaisa hi)
-const mobileNavGroups = [
-  {
-    title: "Features",
-    links: [
-      { label: "Bokeh AI", href: "/bokeh", badge: "NEW" },
-      { label: "Sky AI", href: "/sky" },
-      { label: "Face AI", href: "/face", badge: "NEW" },
-      { label: "Structure AI", href: "/features/structure" },
-      { label: "Skin AI", href: "/skin", badge: "NEW" },
-      { label: "Enhance AI", href: "/features/enhance" },
-      { label: "GenErase", href: "/features/erase" },
-    ],
-  },
-  {
-    title: "Use Cases",
-    links: [
-      { label: "Landscape Photography", href: "/landscape" },
-      { label: "Wildlife Photography", href: "/wildlife" },
-      { label: "Family Photography", href: "/family" },
-      { label: "E-Com Photography", href: "/ecommerce" },
-    ],
-  },
-  {
-    title: "Pro Tools",
-    links: [
-      { label: "Upscale AI", href: "/pro/upscale" },
-      { label: "Background Removal", href: "/background" },
-      { label: "HDR Merge", href: "/hdr" },
-    ],
-  },
-];
+import { Sparkles, Hexagon, Zap, Layers, Wand2, UploadCloud, Loader2, ChevronLeft, ChevronRight, GripVertical, Sliders, ShieldCheck, Star, BadgeCheck, PlayCircle, ChevronDown, Check } from "lucide-react";
 
 const customEase = [0.76, 0, 0.24, 1]; // Animation curve
 
@@ -572,14 +539,6 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
             Pixxel <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 relative"> OS.</span>
           </span>
         </div>
-        <button
-          onClick={() => setIsMobileMenuOpen(true)}
-          className="md:hidden flex items-center justify-center w-11 h-11 rounded-xl border border-white/10 bg-white/5 text-white backdrop-blur-md transition-colors hover:bg-white/10 active:scale-95"
-          aria-label="Open navigation menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          <Menu size={20} />
-        </button>
         <nav className="hidden md:flex items-center gap-8 pr-2 relative">
           <Link href="#overview" className="text-[14px] text-[#a1a1aa] hover:text-white transition-colors">Overview</Link>
           <div>
@@ -918,102 +877,6 @@ const HeroSection = ({ isLoggedIn, setShowUpgradeModal }) => {
       />
     </motion.section>
 
-    {/* 🌟 MOBILE NAVIGATION DRAWER — saare options har device pe */}
-    <AnimatePresence>
-      {isMobileMenuOpen && (
-        <motion.div
-          key="mobile-menu-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[200] md:hidden"
-        >
-          <div
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
-            className="absolute top-0 right-0 bottom-0 w-[min(360px,88vw)] bg-[#0a0a0f] border-l border-white/10 shadow-[-30px_0_80px_rgba(0,0,0,0.8)] flex flex-col"
-            role="dialog"
-            aria-label="Navigation menu"
-          >
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.07]">
-              <span className="font-black text-xl tracking-tighter text-white">
-                Pixxel <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">OS.</span>
-              </span>
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center justify-center w-10 h-10 rounded-xl border border-white/10 bg-white/5 text-slate-300 transition-colors hover:bg-white/10 hover:text-white active:scale-95"
-                aria-label="Close navigation menu"
-              >
-                <X size={18} />
-              </button>
-            </div>
-            <div className="flex-1 overflow-y-auto custom-scrollbar px-5 py-4 overscroll-contain">
-              <div className="flex flex-col gap-1 mb-6">
-                {[
-                  { label: "Overview", href: "#overview" },
-                  { label: "Pricing", href: "/pricing" },
-                  { label: "What's new", href: "/demo" },
-                ].map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-semibold text-white bg-white/[0.03] border border-white/[0.05] transition-colors hover:bg-white/[0.08] active:bg-white/[0.1]"
-                  >
-                    {item.label}
-                    <ChevronRight size={15} className="text-slate-500" />
-                  </Link>
-                ))}
-              </div>
-              {mobileNavGroups.map((group) => (
-                <div key={group.title} className="mb-6">
-                  <h4 className="text-[10px] text-zinc-500 font-bold tracking-[0.18em] uppercase border-b border-white/10 pb-2.5 mb-2 px-1">
-                    {group.title}
-                  </h4>
-                  <div className="flex flex-col">
-                    {group.links.map((link) => (
-                      <Link
-                        key={link.label}
-                        href={link.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center rounded-lg px-3 py-3 text-[14px] text-slate-300 transition-colors hover:bg-white/[0.06] hover:text-white active:bg-white/[0.1]"
-                      >
-                        {link.label}
-                        {link.badge && (
-                          <span className="ml-2 px-1.5 py-[2px] text-black text-[9px] font-black rounded-sm bg-gradient-to-r from-cyan-400 to-purple-500">
-                            {link.badge}
-                          </span>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="px-5 py-4 border-t border-white/[0.07] bg-[#0c0c12]">
-              <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
-                <button
-                  className="w-full font-extrabold uppercase tracking-[0.2em] text-black text-[12px] py-3.5 rounded-lg transition-all duration-300 active:scale-[0.98]"
-                  style={{
-                    background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
-                    boxShadow: "0 6px 28px rgba(34,211,238,0.28), 0 2px 8px rgba(168,85,247,0.2)",
-                  }}
-                >
-                  VIEW PLANS
-                </button>
-              </Link>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
     </>
   );
 };
