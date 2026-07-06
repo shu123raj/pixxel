@@ -88,8 +88,8 @@ export default function Header() {
     { href: "/#Pixxel for Mobile", label: "Pixxel for Mobile" },
     { href: "/#Marketplace", label: "Marketplace" },
     { href: "/pixxel-os", label: "Blog" },
-    { href: "/#Aperty", label: "Aperty" },
-    { href: "/#More", label: "More", hasDropdown: true },
+    { href: "/demo", label: "What's New" },
+    { href: "/pricing", label: "Subscription", hasDropdown: true },
   ];
 
   // LOGIC: Check if we are NOT on the dashboard page
@@ -255,7 +255,7 @@ export default function Header() {
               {/* Drawer Links */}
               <div className="flex-1 overflow-y-auto custom-scrollbar px-5 py-6 overscroll-contain">
                 <div className="flex flex-col gap-2 mb-8">
-                  {showCenterLinks && navLinks.slice(0, 3).map((item) => (
+                  {showCenterLinks && navLinks.map((item) => (
                     <Link
                       key={item.label}
                       href={item.href}
