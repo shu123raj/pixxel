@@ -93,7 +93,7 @@ const PricingCard = ({ plan, isMostPopular }) => {
 
   return (
     <div className={`relative flex flex-col rounded-[2rem] p-[1.5px] transition-all duration-500 h-fit
-      ${isMostPopular ? 'bg-gradient-to-r from-cyan-400 to-purple-500  scale-105 z-10 shadow-[0_0_60px_rgba(34,211,238,0.10),0_0_120px_rgba(168,85,247,0.08)]' : 'bg-white/10 hover:bg-white/20'}`}>
+      ${isMostPopular ? 'bg-gradient-to-r from-cyan-400 to-purple-500  md:scale-105 z-10 shadow-[0_0_60px_rgba(34,211,238,0.10),0_0_120px_rgba(168,85,247,0.08)]' : 'bg-white/10 hover:bg-white/20'}`}>
       
       {isMostPopular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-400 to-purple-500  text-black text-[10px] font-black px-4 py-1.5 rounded-full tracking-widest uppercase">
@@ -444,7 +444,7 @@ export default function BackgroundRemovalPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 15 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-[calc(100%+30px)] right-[-180px] w-[800px] bg-[#111111] border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.9)] rounded-xl p-8 cursor-default z-[100]"
+                    className="absolute top-[calc(100%+30px)] right-0 lg:right-[-180px] w-[min(800px,calc(100vw-2rem))] bg-[#111111] border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.9)] rounded-xl p-8 cursor-default z-[100]"
                   >
                     <div className="grid grid-cols-4 gap-8">
                       
@@ -538,7 +538,7 @@ export default function BackgroundRemovalPage() {
           <div className="flex items-center justify-center gap-1 text-[13px] font-semibold text-white/80 mb-15">
             Excellent 4.6 out of 5 <Star className="w-4 h-4 fill-[#00b67a] text-[#00b67a] ml-1" /> <span className="font-bold ml-1">Trustpilot</span>
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-[47px] font-bold text-white leading-[1.1] tracking-tight mb-5">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[47px] font-bold text-white leading-[1.1] tracking-tight mb-5">
             AI Background Remover:  <GradientText>Select. Click. Remove.</GradientText>
           </h1>
           <p className="text-lg md:text-xl text-white/70 font-light mb-8 max-w-6xl mx-auto leading-relaxed">
@@ -546,12 +546,11 @@ export default function BackgroundRemovalPage() {
           </p>
           <Link href="/pricing">
                     <button
-                      className="font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95 mb-4"
+                      className="w-full max-w-[320px] sm:w-auto py-3 px-8 sm:px-[95px] font-extrabold uppercase tracking-[0.2em] transition-all duration-300 hover:-translate-y-[2px] active:scale-95 mb-4"
                       style={{
                         background: "linear-gradient(90deg, #22d3ee 0%, #a855f7 100%)",
                         color: "#000000",
                         fontSize: "12px",
-                        padding: "12px 95px",
                         borderRadius: "4px",
                         boxShadow: "0 6px 28px rgba(13, 78, 88, 0.14), 0 2px 8px rgba(168,85,247,0.2)",
                         letterSpacing: "0.1em",
@@ -566,11 +565,11 @@ export default function BackgroundRemovalPage() {
         </div>
 
         {/* Big Container Box with Tabs */}
-        <div className="w-[1200px] max-w-full h-[680px] mx-auto px-9 z-20 ">
+        <div className="w-[1200px] max-w-full h-auto lg:h-[680px] mx-auto px-4 sm:px-9 z-20 ">
           <div className="w-full h-full bg-[#111]  rounded-2xl overflow-hidden shadow-2xl p-1 pb-0 flex flex-col">
-            
+
             {/* Media Area */}
-            <div className="relative w-full aspect-[16/9] md:aspect-ratio  overflow-hidden rounded-2xl">
+            <div className="relative w-full aspect-[16/9] lg:aspect-auto lg:flex-1 overflow-hidden rounded-2xl">
               <AnimatePresence mode="wait">
                 {heroTab === 0 ? (
                   <motion.div key="video" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full">
@@ -613,7 +612,7 @@ export default function BackgroundRemovalPage() {
       {/* ========================================== */}
       {/* 🌟 2. HOW TO USE BACKGROUND REMOVAL AI */}
       {/* ========================================== */}
-      <section className="py-24 max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+      <section className="py-16 md:py-24 max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
         <div className="md:col-span-12 text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Use <GradientText>Background Removal AI</GradientText></h2>
         </div>
@@ -655,15 +654,15 @@ export default function BackgroundRemovalPage() {
       {/* ========================================== */}
       {/* 🌟 3. WHY CHOOSE SECTION (4 ALTERNATING BLOCKS) */}
       {/* ========================================== */}
-      <section className="py-24 max-w-7xl mx-auto px-6 space-y-32">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Why Choose Pixxel OS <GradientText>AI Background Remover?</GradientText></h2>
+      <section className="py-16 md:py-24 max-w-7xl mx-auto px-5 sm:px-6 space-y-20 md:space-y-32">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Why Choose Pixxel OS <GradientText>AI Background Remover?</GradientText></h2>
         </div>
 
         {/* Block 1 */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6 order-2 md:order-1">
-            <h2 className="text-4xl font-bold text-white leading-tight">Remove backgrounds in one click</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">Remove backgrounds in one click</h2>
             <p className="text-white/60 text-lg font-light leading-relaxed">
               Just select your photo—Pixxel OS’s AI instantly cuts out the subject with perfect precision. No need for tedious masking or manual edge refinement.
             </p>
@@ -692,7 +691,7 @@ export default function BackgroundRemovalPage() {
              />
           </div>
           <div className="space-y-6 order-2">
-            <h2 className="text-4xl font-bold text-white leading-tight">Get studio-quality product photos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">Get studio-quality product photos</h2>
             <p className="text-white/60 text-lg font-light leading-relaxed">
               Make every product shot look clean and professional. Delete the cluttered background, keep lighting consistent, and save hours of manual editing for your e-commerce store.
             </p>
@@ -707,7 +706,7 @@ export default function BackgroundRemovalPage() {
         {/* Block 3 */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6 order-2 md:order-1">
-            <h2 className="text-4xl font-bold text-white leading-tight">Enhance portraits with better backgrounds</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">Enhance portraits with better backgrounds</h2>
             <p className="text-white/60 text-lg font-light leading-relaxed">
               Give your portraits the setting they deserve—from soft studio tones to scenic outdoor looks. Every replaced background blends naturally and stays highly realistic.
             </p>
@@ -736,7 +735,7 @@ export default function BackgroundRemovalPage() {
              />
           </div>
           <div className="space-y-6 order-2">
-            <h2 className="text-4xl font-bold text-white leading-tight">Perfect for E-commerce & Automotive</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">Perfect for E-commerce & Automotive</h2>
             <p className="text-white/60 text-lg font-light leading-relaxed">
               Instantly isolate vehicles, clothing, or complex subjects. Our AI handles challenging edges, reflections, and transparent areas seamlessly, ready for any marketplace.
             </p>
@@ -755,13 +754,13 @@ export default function BackgroundRemovalPage() {
       {/* ========================================== */}
       {/* 🌟 5. UNLOCK POWER */}
       {/* ========================================== */}
-      <section className="py-24 max-w-6xl mx-auto px-6 text-center">
+      <section className="py-16 md:py-24 max-w-6xl mx-auto px-5 sm:px-6 text-center">
           <div className="flex items-center justify-center gap-1 text-[13px] font-semibold text-white/80 mb-4">
             Excellent 4.6 out of 5 <Star className="w-4 h-4 fill-[#00b67a] text-[#00b67a] ml-1" /> <span className="font-bold ml-1">Trustpilot</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">Unlock the power of Pixxel OS</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10 md:mb-16">Unlock the power of Pixxel OS</h2>
 
-          <div className="grid md:grid-cols-2 gap-12 bg-gradient-to-br from-[#1a120b] to-[#0a0705] border border-[#ffb400]/20 rounded-3xl p-10 md:p-16 items-center text-left">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 bg-gradient-to-br from-[#1a120b] to-[#0a0705] border border-[#ffb400]/20 rounded-3xl p-6 sm:p-10 md:p-16 items-center text-left">
               <div>
                   <img src="remover4.png" className="w-full rounded-xl shadow-2xl" alt="Mockup" />
                   <div className="mt-6 text-center text-sm text-white/60 flex items-center justify-center gap-2">
@@ -776,7 +775,7 @@ export default function BackgroundRemovalPage() {
                       "Award-winning, intuitive interface", 
                       "30 days money back guarantee"
                   ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 text-xl text-white/90 font-medium">
+                      <div key={i} className="flex items-center gap-4 text-base sm:text-xl text-white/90 font-medium">
                           <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center shrink-0">
                               <Check className="w-4 h-4 text-[#ffb400]" />
                           </div>
@@ -795,9 +794,9 @@ export default function BackgroundRemovalPage() {
       {/* ========================================== */}
       {/* 🌟 6. PRICING SECTION (Collapsible Cards) */}
       {/* ========================================== */}
-      <section className="py-24 max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-[#ffb400] mb-2">Lifetime editing <span className="text-white">made flexible!</span></h2>
-          <h3 className="text-4xl font-bold text-white mb-16">Choose the plan that works for you</h3>
+      <section className="py-16 md:py-24 max-w-7xl mx-auto px-5 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#ffb400] mb-2">Lifetime editing <span className="text-white">made flexible!</span></h2>
+          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-10 md:mb-16">Choose the plan that works for you</h3>
 
           <div className="grid md:grid-cols-3 gap-8 text-left mb-16 items-start">
             {plansData.map((plan, idx) => (
@@ -805,9 +804,9 @@ export default function BackgroundRemovalPage() {
             ))}
           </div>
 
-          <div className="border border-[#ffb400] bg-[#1a120b] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-white">Reliable support, trusted by our users</h3>
-              <div className="flex items-center gap-6 text-sm font-medium">
+          <div className="border border-[#ffb400] bg-[#1a120b] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+              <h3 className="text-xl sm:text-2xl font-bold text-white">Reliable support, trusted by our users</h3>
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm font-medium">
                   <div className="flex items-center gap-2"><span className="text-[#ffb400]">💬</span> 24/7 Chat support</div>
                   <div className="flex items-center gap-2"><span className="text-[#ffb400]">⚙️</span> Technical assistance</div>
               </div>
@@ -817,7 +816,7 @@ export default function BackgroundRemovalPage() {
       {/* ========================================== */}
       {/* 🌟 7. FAQ SECTION (Premium Style) */}
       {/* ========================================== */}
-      <section className="py-16 bg-[#050505] relative overflow-hidden mb-32 max-w-4xl mx-auto rounded-[2.5rem] border border-white/5">
+      <section className="py-16 bg-[#050505] relative overflow-hidden mb-20 md:mb-32 max-w-4xl mx-4 lg:mx-auto rounded-[2.5rem] border border-white/5">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-r from-cyan-400/10 to-purple-500/10 blur-[140px] rounded-full pointer-events-none" />
         <div className="px-6 relative z-10">
           <div className="text-center mb-16">
@@ -834,14 +833,14 @@ export default function BackgroundRemovalPage() {
               { question: "Can I use AI to remove backgrounds in a batch?", answer: "Yes, our batch processing feature allows you to apply the same AI background removal settings to multiple photos at once, saving you significant time." },
             ].map((faq, index) => (
               <div key={index} className="group rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.03]">
-                <button onClick={() => setOpenFAQ(openFAQ === index ? null : index)} className="w-full flex items-center justify-between px-7 py-6 text-left">
+                <button onClick={() => setOpenFAQ(openFAQ === index ? null : index)} className="w-full flex items-center justify-between gap-4 px-5 sm:px-7 py-6 text-left">
                   <span className="text-white font-medium text-[15px] md:text-[16px] tracking-[-0.02em]">{faq.question}</span>
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-cyan-400/10 to-purple-500/10 border border-white/10 transition-all duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
+                  <div className={`flex items-center justify-center w-8 h-8 shrink-0 rounded-full bg-gradient-to-r from-cyan-400/10 to-purple-500/10 border border-white/10 transition-all duration-300 ${openFAQ === index ? "rotate-45" : ""}`}>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-xl font-semibold">+</span>
                   </div>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openFAQ === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
-                  <p className="px-7 pb-6 text-[14px] leading-7 text-white/60">{faq.answer}</p>
+                <div className={`overflow-hidden transition-all duration-300 ${openFAQ === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+                  <p className="px-5 sm:px-7 pb-6 text-[14px] leading-7 text-white/60">{faq.answer}</p>
                 </div>
               </div>
             ))}
@@ -852,7 +851,7 @@ export default function BackgroundRemovalPage() {
       {/* ============================================================== */}
       {/* 🌟 8. FOOTER WITH BACKEND LOGIC */}
       {/* ============================================================== */}
-      <footer className="py-20 relative z-20 border-t border-white/[0.05] bg-[#020202]">
+      <footer className="py-14 sm:py-20 relative z-20 border-t border-white/[0.05] bg-[#020202]">
        <div className="max-w-7xl mx-auto px-5 lg:px-8">
         <div className="grid gap-12 lg:gap-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] items-start">
           <div>
@@ -878,7 +877,7 @@ export default function BackgroundRemovalPage() {
           <div>
             <h4 className="text-[12px] font-black text-white mb-6 uppercase tracking-[0.2em] opacity-90">Priority Sync</h4>
             <form onSubmit={handleContactSubmit} className="space-y-3">
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                  <Input placeholder="Ident" value={contactForm.name} onChange={(e) => setContactForm(p => ({ ...p, name: e.target.value }))} className="bg-[#0a0a0a] border-white/10 text-white rounded-xl h-12 text-[14px] flex-1 focus-visible:ring-1 focus-visible:ring-amber-500" required />
                  <Input type="email" placeholder="Terminal@mail.com" value={contactForm.email} onChange={(e) => setContactForm(p => ({ ...p, email: e.target.value }))} className="bg-[#0a0a0a] border-white/10 text-white rounded-xl h-12 text-[14px] flex-[1.5] focus-visible:ring-1 focus-visible:ring-amber-500" required />
               </div>
@@ -887,7 +886,7 @@ export default function BackgroundRemovalPage() {
             </form>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row items-center justify-between gap-6 text-[13px] font-medium text-slate-600">
+        <div className="mt-14 sm:mt-20 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left text-[12px] sm:text-[13px] font-medium text-slate-600">
           <p>Operational Runtime: © {new Date().getFullYear()} Pixxel LLC. Hosted Securely.</p>
           <div className="flex items-center gap-4">
              {[<Twitter key="1"/>, <Instagram key="2"/>, <Linkedin key="3"/>, <Github key="4"/>].map((icon, idx) => (

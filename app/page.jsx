@@ -1122,7 +1122,7 @@ const App = () => {
 
       <AnimatePresence>
         {isLoggedIn && isScrolled && (
-          <motion.div initial={{ opacity: 0, scale: 0.8, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.8, y: 50, transition: { duration: 0.2 } }} className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:left-6 lg:right-auto z-[100]">
+          <motion.div initial={{ opacity: 0, scale: 0.8, y: 50 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.8, y: 50, transition: { duration: 0.2 } }} className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-[100]">
             <button onClick={() => setIsUploadModalOpen(true)} className="group flex items-center gap-3 bg-white text-slate-950 pr-5 pl-3 h-[60px] rounded-full shadow-[0_15px_30px_rgba(255,255,255,0.25)] hover:shadow-[0_20px_40px_rgba(255,255,255,0.35)] transition-all duration-400 hover:-translate-y-2 font-bold font-sans tracking-wide">
               <div className="w-11 h-11 bg-[#000] rounded-full flex items-center justify-center text-amber-400 shadow-[inset_0_2px_10px_rgba(251,188,5,0.2)] group-hover:scale-95 transition-transform duration-300">
                 <UploadCloud strokeWidth={2} size={20} className="group-hover:-translate-y-0.5 group-hover:text-amber-300 transition-all"/>
