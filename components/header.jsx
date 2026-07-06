@@ -88,8 +88,8 @@ export default function Header() {
     { href: "/#Pixxel for Mobile", label: "Pixxel for Mobile" },
     { href: "/#Marketplace", label: "Marketplace" },
     { href: "/pixxel-os", label: "Blog" },
-    { href: "/demo", label: "What's New" },
-    { href: "/pricing", label: "Subscription", hasDropdown: true },
+    { href: "/demo", label: "Aperty" },
+    { href: "/#More", label: "More", hasDropdown: true },
   ];
 
   // LOGIC: Check if we are NOT on the dashboard page
