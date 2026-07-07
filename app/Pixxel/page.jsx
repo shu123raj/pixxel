@@ -61,12 +61,12 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, heightClass = "h-[300px] s
       )}
 
       {/* AFTER IMAGE (Base Layer) */}
-      <img src={afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={afterImage} alt="After: photo enhanced with Pixxel AI editor" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
       
       {/* BEFORE IMAGE (Clipped Layer on Top) */}
       <img 
         src={beforeImage} 
-        alt="Before" 
+        alt="Before: original unedited photo" 
         className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} 
       />
@@ -287,7 +287,7 @@ export default function EditorLandingPage() {
           <div className="w-full lg:w-[55%] h-[350px] sm:h-[450px] lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5">
             <img 
               src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1600&auto=format&fit=crop" 
-              alt="Mountain Lake" 
+              alt="Mountain lake landscape edited with Pixxel AI" 
               className="w-full h-full object-cover transition-all duration-75"
               style={{ filter: `brightness(${0.5 + accentValue/100}) contrast(${0.8 + accentValue/100}) saturate(${0.5 + accentValue/50})` }}
             />
@@ -364,7 +364,7 @@ export default function EditorLandingPage() {
           <div className="w-full lg:w-[55%] h-[350px] sm:h-[450px] lg:h-full relative overflow-hidden order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-white/5">
             <img 
               src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?q=80&w=1600&auto=format&fit=crop" 
-              alt="City Buildings" 
+              alt="City buildings photo enhanced with Pixxel AI" 
               className="w-full h-full object-cover"
             />
             {/* Dynamic White fog overlay based on slider value */}
@@ -401,7 +401,7 @@ export default function EditorLandingPage() {
           <div className="w-full md:w-1/2">
             <img 
               src="https://res.cloudinary.com/do6jlckzy/image/upload/v1783188627/ChatGPT_Image_Jul_4_2026_11_34_40_PM-Photoroom_nq1awp.png" 
-              alt="Laptop Editor Mockup" 
+              alt="Pixxel AI photo editor on laptop mockup" 
               className="w-full rounded-lg drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               style={{ filter: "brightness(0.9) contrast(1.1)" }} 
             />

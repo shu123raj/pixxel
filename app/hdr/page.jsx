@@ -78,10 +78,10 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, heightClass = "h-full", hi
       )}
       
       {/* AFTER IMAGE (Base Image) */}
-      <img src={afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={afterImage} alt="After: HDR depth added with Pixxel AI HDR effect" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
       
       {/* BEFORE IMAGE (Clipped on top) */}
-      <img src={beforeImage} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
+      <img src={beforeImage} alt="Before: flat photo with low dynamic range" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
       
       <div 
         className="absolute top-0 bottom-0 w-[2px] bg-white shadow-[0_0_15px_rgba(0,0,0,0.8)] z-10 pointer-events-none flex items-center justify-center"

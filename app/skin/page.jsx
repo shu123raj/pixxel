@@ -66,10 +66,10 @@ const BeforeAfterSlider = ({ image, beforeFilter, afterFilter = "none", heightCl
       )}
 
       {/* AFTER IMAGE (Base) */}
-      <img src={image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+      <img src={image} alt="After: skin smoothed with Pixxel AI skin retouching" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
       
       {/* BEFORE IMAGE (Clipped on top) */}
-      <img src={image} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
+      <img src={image} alt="Before: unedited skin with blemishes" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
 
       {/* SLIDER HANDLE */}
       <div 
@@ -752,7 +752,7 @@ export default function SkinAIEditor() {
 
           <div className="grid md:grid-cols-2 gap-12 bg-gradient-to-br from-[#1a120b] to-[#0a0705] border border-[#ffb400]/20 rounded-3xl p-10 md:p-16 items-center text-left">
               <div>
-                  <img src="skin3.jpg" className="w-full rounded-xl shadow-2xl" alt="Mockup" />
+                  <img src="skin3.jpg" className="w-full rounded-xl shadow-2xl" alt="Pixxel AI skin retouching editor interface mockup" />
                   <div className="mt-6 text-center text-sm text-white/60 flex items-center justify-center gap-2">
                       Works as <Apple className="w-4 h-4 text-white" /> <span className="text-white font-medium">MacOS</span> & <Monitor className="w-4 h-4 text-white" /> <span className="text-white font-medium">Windows</span> app
                   </div>

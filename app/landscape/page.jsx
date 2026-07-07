@@ -50,10 +50,10 @@ const BeforeAfterSlider = ({ image, beforeFilter, afterFilter = "none", heightCl
       )}
 
       {/* AFTER IMAGE (Base Layer) */}
-      <img src={image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+      <img src={image} alt="After: landscape enhanced with Pixxel AI photo editor" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
       
       {/* BEFORE IMAGE (Clipped Layer on Top) */}
-      <img src={image} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
+      <img src={image} alt="Before: unedited landscape photo" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
 
       {/* SLIDER HANDLE */}
       <div 

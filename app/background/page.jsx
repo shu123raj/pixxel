@@ -72,10 +72,10 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, heightClass = "h-[400px] m
         </div>
       )}
       {/* AFTER IMAGE (Base Image) */}
-      <img src={afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={afterImage} alt="After: background removed with Pixxel AI background remover" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
       
       {/* BEFORE IMAGE (Clipped on top) */}
-      <img src={beforeImage} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
+      <img src={beforeImage} alt="Before: original photo with background" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
       
       <div 
         className="absolute top-0 bottom-0 w-[1.5px] bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 pointer-events-none flex items-center justify-center"
@@ -762,7 +762,7 @@ export default function BackgroundRemovalPage() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 bg-gradient-to-br from-[#1a120b] to-[#0a0705] border border-[#ffb400]/20 rounded-3xl p-6 sm:p-10 md:p-16 items-center text-left">
               <div>
-                  <img src="remover4.png" className="w-full rounded-xl shadow-2xl" alt="Mockup" />
+                  <img src="remover4.png" className="w-full rounded-xl shadow-2xl" alt="Pixxel AI background remover editor interface mockup" />
                   <div className="mt-6 text-center text-sm text-white/60 flex items-center justify-center gap-2">
                       Works as <Apple className="w-4 h-4 text-white" /> <span className="text-white font-medium">MacOS</span> & <Monitor className="w-4 h-4 text-white" /> <span className="text-white font-medium">Windows</span> app
                   </div>

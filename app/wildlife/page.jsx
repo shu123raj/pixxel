@@ -43,10 +43,10 @@ const BeforeAfterDualURL = ({ beforeImage, afterImage, heightClass = "h-[400px] 
       onTouchMove={handleMove}
     >
       {/* AFTER IMAGE (Base) */}
-      <img src={afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={afterImage} alt="After: wildlife photo enhanced with Pixxel AI" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
       
       {/* BEFORE IMAGE (Clipped on top) */}
-      <img src={beforeImage} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
+      <img src={beforeImage} alt="Before: unedited wildlife photo" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
 
       {showLabels && (
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex justify-between px-12 z-20 pointer-events-none drop-shadow-md">
@@ -88,8 +88,8 @@ const BeforeAfterFilter = ({ image, beforeFilter, afterFilter = "none", heightCl
         onMouseMove={handleMove}
         onTouchMove={handleMove}
       >
-        <img src={image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
-        <img src={image} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
+        <img src={image} alt="After: wildlife photo enhanced with Pixxel AI" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+        <img src={image} alt="Before: unedited wildlife photo" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
         <div className="absolute top-0 bottom-0 w-[1.5px] bg-white/50 z-10 pointer-events-none flex items-center justify-center" style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}>
             {/* Small diamond handle for aesthetic */}
             <div className="w-2 h-2 bg-white rotate-45 shadow-md"></div>

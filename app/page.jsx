@@ -304,8 +304,8 @@ const InteractiveAICard = ({ data, isActive }) => {
   const handleTouchMove = (e) => { if (isDragging) handleMove(e.touches[0].clientX); };
   return (
     <div className={`relative w-full h-full rounded-[2rem] overflow-hidden select-none transition-all duration-700 ease-in-out ${isActive ? 'shadow-[0_0_50px_rgba(0,0,0,0.8)]' : 'shadow-none pointer-events-none'}`} ref={containerRef} onMouseMove={handleMouseMove} onTouchMove={handleTouchMove} onMouseUp={() => setIsDragging(false)} onMouseLeave={() => setIsDragging(false)} onTouchEnd={() => setIsDragging(false)}>
-      <div className="absolute inset-0 z-0 bg-[#111]"><img src={data.image} alt="Before" className="w-full h-full object-cover transition-all duration-300" style={{ filter: data.beforeFilter }} draggable={false} /></div>
-      <div className="absolute inset-0 z-10" style={{ clipPath: `inset(0 0 0 ${sliderPos}%)`, transition: isDragging ? 'none' : 'clip-path 0.4s ease-in-out' }}><img src={data.image} alt="After" className="w-full h-full object-cover transition-all duration-300" style={{ filter: data.afterFilter }} draggable={false} /></div>
+      <div className="absolute inset-0 z-0 bg-[#111]"><img src={data.image} alt="Before: original photo before Pixxel AI editing" className="w-full h-full object-cover transition-all duration-300" style={{ filter: data.beforeFilter }} draggable={false} /></div>
+      <div className="absolute inset-0 z-10" style={{ clipPath: `inset(0 0 0 ${sliderPos}%)`, transition: isDragging ? 'none' : 'clip-path 0.4s ease-in-out' }}><img src={data.image} alt="After: photo enhanced with Pixxel AI photo editor" className="w-full h-full object-cover transition-all duration-300" style={{ filter: data.afterFilter }} draggable={false} /></div>
       <div className="absolute top-0 bottom-0 z-20 flex items-center justify-center w-1 hover:cursor-ew-resize group" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)', transition: isDragging ? 'none' : 'left 0.4s ease-in-out' }} onMouseDown={() => setIsDragging(true)} onTouchStart={() => setIsDragging(true)}>
         <div className="w-[1px] h-full bg-white/50 shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
         <div className="absolute w-6 h-12 bg-white/20 backdrop-blur-md border border-white/5 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><GripVertical className="w-4 h-4 text-white" /></div>
@@ -394,8 +394,8 @@ const StepImageSlider = ({ image, filter, isOriginal }) => {
   const handleTouchMove = (e) => { if (isDragging) handleMove(e.touches[0].clientX); };
   return (
     <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-full rounded-[1.5rem] overflow-hidden select-none" ref={containerRef} onMouseMove={handleMouseMove} onTouchMove={handleTouchMove} onMouseUp={() => setIsDragging(false)} onMouseLeave={() => setIsDragging(false)} onTouchEnd={() => setIsDragging(false)}>
-      <div className="absolute inset-0 z-0"><img src={image} alt="Before" className="w-full h-full object-cover" draggable={false} /></div>
-      <div className="absolute inset-0 z-10" style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}><img src={image} alt="After" className="w-full h-full object-cover transition-all duration-500" style={{ filter }} draggable={false} /></div>
+      <div className="absolute inset-0 z-0"><img src={image} alt="Before: original photo before Pixxel AI editing" className="w-full h-full object-cover" draggable={false} /></div>
+      <div className="absolute inset-0 z-10" style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}><img src={image} alt="After: photo enhanced with Pixxel AI photo editor" className="w-full h-full object-cover transition-all duration-500" style={{ filter }} draggable={false} /></div>
       {!isOriginal && (
         <>
           <div className="absolute top-0 bottom-0 z-20 flex items-center justify-center w-1 hover:cursor-ew-resize group" style={{ left: `${sliderPos}%`, transform: 'translateX(-50%)' }} onMouseDown={() => setIsDragging(true)} onTouchStart={() => setIsDragging(true)}>

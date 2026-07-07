@@ -50,10 +50,10 @@ const BeforeAfterSlider = ({ image, beforeFilter, afterFilter = "none", heightCl
       </div>
 
       {/* AFTER IMAGE (Base) */}
-      <img src={image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+      <img src={image} alt="After: portrait retouched with Pixxel AI face editor" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
       
       {/* BEFORE IMAGE (Clipped on top) */}
-      <img src={image} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
+      <img src={image} alt="Before: unedited portrait photo" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
 
       {/* SLIDER HANDLE */}
       <div 
@@ -183,7 +183,7 @@ export default function FaceAIEditor() {
 
         {/* Software UI Mockup Image (Static for aesthetic) */}
         <div className="w-full aspect-[16/9] md:aspect-ratio rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-900 relative">
-            <img src="face2.jpg" alt="UI Interface" className="w-full h-full object-cover opacity-60" />
+            <img src="face2.jpg" alt="Pixxel AI face retouching editor interface" className="w-full h-full object-cover opacity-60" />
             <div className="absolute inset-0 flex items-center justify-center">
                 <div className="px-6 py-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-sm font-semibold tracking-widest text-white/80">PIXXEL OS INTERFACE PREVIEW</div>
             </div>

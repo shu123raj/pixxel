@@ -229,7 +229,7 @@ export default function PixxelOSPage() {
                 {/* IMAGES COMPOSITION (Right Side) */}
                 <div className="relative w-full lg:w-[60%] h-full min-h-[300px]">
                   <div className="absolute right-13 top-1/2 -translate-y-1/2 w-[85%] lg:w-[70%] aspect-ratio ">
-                    <img src={heroSlides[currentSlide].laptopImg} alt="Laptop UI" className="w-full h-full object-cover opacity-90" />
+                    <img src={heroSlides[currentSlide].laptopImg} alt="Pixxel OS AI photo editor interface on laptop" className="w-full h-full object-cover opacity-90" />
                   </div>
                   
                 </div>

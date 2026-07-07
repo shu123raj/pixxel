@@ -53,10 +53,10 @@ const BeforeAfterSlider = ({ image, beforeImage, afterImage, beforeFilter, after
       )}
 
       {/* AFTER IMAGE (Base Layer) */}
-      <img src={afterImage || image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+      <img src={afterImage || image} alt="After: sky replaced with Pixxel AI sky replacement" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
       
       {/* BEFORE IMAGE (Clipped Layer on Top) */}
-      <img src={beforeImage || image} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
+      <img src={beforeImage || image} alt="Before: photo with dull overcast sky" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
 
       {/* SLIDER HANDLE */}
       <div 
@@ -389,7 +389,7 @@ export default function SkyReplacementPage() {
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.3 }}
                           src={transformImages[activeTransform]}
-                          alt="Transform Example"
+                          alt="Sky replacement before and after transformation example"
                           className="w-full h-full object-cover"
                       />
                   </AnimatePresence>
@@ -476,7 +476,7 @@ export default function SkyReplacementPage() {
 
               <div className="relative z-10 w-full md:w-1/2 flex justify-end">
                   <div className="w-full max-w-lg">
-                      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=80" alt="Laptop Frame" className="w-full drop-shadow-2xl rounded-lg" style={{ filter: 'brightness(0.8) contrast(1.2)' }} />
+                      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1000&q=80" alt="Pixxel AI sky editor on laptop screen" className="w-full drop-shadow-2xl rounded-lg" style={{ filter: 'brightness(0.8) contrast(1.2)' }} />
                       
                   </div>
               </div>
@@ -547,7 +547,7 @@ export default function SkyReplacementPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-16">Your Ultimate Sky Replacement Editor in Action</h2>
           
           <div className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(255,180,0,0.1)]">
-              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000&auto=format&fit=crop" alt="Editor Action" className="w-full aspect-video object-cover" style={{ filter: 'brightness(0.7)' }}/>
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2000&auto=format&fit=crop" alt="AI sky replacement editing in action" className="w-full aspect-video object-cover" style={{ filter: 'brightness(0.7)' }}/>
               
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group cursor-pointer hover:bg-black/10 transition-colors">
                   <div className="w-20 h-20 bg-[#ffb400] rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">

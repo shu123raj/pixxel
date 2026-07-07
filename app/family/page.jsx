@@ -42,8 +42,8 @@ const BeforeAfterDualURL = ({ beforeImage, afterImage, heightClass = "h-screen",
       onMouseMove={handleMove}
       onTouchMove={handleMove}
     >
-      <img src={afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-      <img src={beforeImage} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
+      <img src={afterImage} alt="After: family photo enhanced with Pixxel AI" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={beforeImage} alt="Before: unedited family photo" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
 
       {showLabels && (
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex justify-between px-12 z-20 pointer-events-none drop-shadow-md">
@@ -90,8 +90,8 @@ const BeforeAfterFilter = ({ image, beforeFilter, afterFilter = "none", heightCl
           <span className="text-white text-[10px] font-bold tracking-[0.15em] opacity-80 uppercase">AFTER</span>
         </div>
       )}
-      <img src={image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
-      <img src={image} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
+      <img src={image} alt="After: family photo enhanced with Pixxel AI" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+      <img src={image} alt="Before: unedited family photo" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} />
       <div className="absolute top-0 bottom-0 w-[1.5px] bg-white shadow-[0_0_15px_rgba(0,0,0,0.8)] z-10 pointer-events-none flex items-center justify-center" style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}></div>
     </div>
   );
@@ -281,7 +281,7 @@ export default function FamilyEditor() {
                     </div>
                 </div>
                 <div className="relative w-full aspect-video">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1600&auto=format&fit=crop" className="w-full h-full object-cover" alt="Editor Mockup" />
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1600&auto=format&fit=crop" className="w-full h-full object-cover" alt="Pixxel family photo editor interface mockup" />
                     
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center hover:bg-black/30 transition-colors cursor-pointer group">
                         <div className="w-20 h-20 rounded-full bg-black/50 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">

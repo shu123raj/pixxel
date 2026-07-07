@@ -48,8 +48,8 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, heightClass = "h-[400px] m
         <span className="bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-[0.2em] px-3 py-1.5 rounded-full border border-white/10">AFTER</span>
       </div>
 
-      <img src={afterImage} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-      <img src={beforeImage} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
+      <img src={afterImage} alt="After: background blurred with Pixxel AI bokeh effect" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+      <img src={beforeImage} alt="Before: photo with sharp distracting background" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }} />
 
       <div 
         className="absolute top-0 bottom-0 w-0.5 bg-white/70 shadow-[0_0_10px_rgba(0,0,0,0.5)] z-10 pointer-events-none flex items-center justify-center"

@@ -67,12 +67,12 @@ const BeforeAfterSlider = ({ image, beforeImage, afterImage, beforeFilter, after
       )}
 
       {/* AFTER IMAGE (Base Layer) */}
-      <img src={afterImage || image} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
+      <img src={afterImage || image} alt="After: product photo retouched with Pixxel AI" className="absolute inset-0 w-full h-full object-cover pointer-events-none" style={{ filter: afterFilter }} />
       
       {/* BEFORE IMAGE (Clipped Layer on Top) */}
       <img 
         src={beforeImage || image} 
-        alt="Before" 
+        alt="Before: unedited product photo" 
         className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`, filter: beforeFilter }} 
       />
@@ -371,7 +371,7 @@ export default function EcommerceEditorPage() {
     <img 
       src="https://res.cloudinary.com/do6jlckzy/image/upload/v1783241014/sharegrid-N10auyEVst8-unsplash_larfnu.jpg" 
       className="w-full h-full object-cover opacity-80" 
-      alt="Presets Demo" 
+      alt="Pixxel AI presets demo for product photos" 
     />
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center pl-1 shadow-[0_0_30px_rgba(255,255,255,0.2)] pointer-events-auto cursor-pointer hover:bg-white/20 transition-all">
