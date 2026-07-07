@@ -14,6 +14,7 @@ import ScrollPopup from "@/components/scroll-popup";
 import { StoreUserProvider } from "@/components/store-user-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Breadcrumbs from "@/components/seo/breadcrumbs";
 
 // NAYA IMPORT: Yahan chatbot component laya gaya hai
 import Chatbot from "@/components/chatbot";
@@ -125,6 +126,8 @@ export default function RootLayout({ children }) {
                 <Analytics/>
                 <StickyBanner />
                 <ScrollPopup />
+                <Breadcrumbs />
+
 
                 {/* NAYA: Global Chatbot Component */}
                 <Chatbot />
