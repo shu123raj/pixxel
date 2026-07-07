@@ -730,8 +730,8 @@ export default function BackgroundRemovalPage() {
           <div className="order-1">
              <BeforeAfterSlider 
                 heightClass="h-[350px] md:h-[450px]"
-                beforeImage="YOUR_BEFORE_CAR_IMAGE_URL.jpg"
-                afterImage="YOUR_AFTER_CAR_IMAGE_URL.jpg" 
+                beforeImage="https://res.cloudinary.com/xkpzdjmx/image/upload/v1783439735/joshua-koblin-eqW1MPinEV4-unsplash_ihzmpo.jpg"
+                afterImage="https://res.cloudinary.com/xkpzdjmx/image/upload/v1783439755/joshua-koblin-eqW1MPinEV4-unsplash_1_t1su1q.jpg" 
              />
           </div>
           <div className="space-y-6 order-2">
