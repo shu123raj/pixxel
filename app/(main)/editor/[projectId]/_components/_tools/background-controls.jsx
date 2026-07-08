@@ -60,6 +60,21 @@ const uploadToCloudinary = async (base64Image) => {
   throw new Error(data.error?.message || "Cloudinary upload failed");
 };
 
+// 🌟 WAIT FUNCTION: Cloudinary processing check karne ke liye
+const waitForCloudinaryProcessing = async (url, maxRetries = 10) => {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      const checkUrl = `${url}${url.includes("?") ? "&" : "?"}t=${Date.now()}`;
+      const res = await fetch(checkUrl, { method: "HEAD" });
+      if (res.ok) return true; 
+    } catch (e) {
+      console.warn("Checking Cloudinary status...", e);
+    }
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+  return false;
+};
+
 export function BackgroundControls({ project }) {
   const { canvasEditor, processingMessage, setProcessingMessage } = useCanvas();
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
@@ -80,7 +95,7 @@ export function BackgroundControls({ project }) {
   // 🌟 Healing States
   const [isHealingMode, setIsHealingMode] = useState(false);
   const [healingBrushSize, setHealingBrushSize] = useState(30);
-  const [healingOpacity, setHealingOpacity] = useState(100); // NAYA OPACITY STATE
+  const [healingOpacity, setHealingOpacity] = useState(100); 
 
   const getMainImage = () => {
     if (!canvasEditor) return null;
@@ -106,7 +121,7 @@ export function BackgroundControls({ project }) {
   }, [shadowAngle, shadowDistance, shadowBlur, shadowOpacity, shadowColor, isShadowEnabled, canvasEditor]);
 
   // ==========================================
-  // ✅ UPGRADED HEALING BRUSH ENGINE (Gaussian + Opacity)
+  // ✅ UPGRADED HEALING BRUSH ENGINE
   // ==========================================
   useEffect(() => {
     if (!canvasEditor) return;
@@ -215,18 +230,16 @@ export function BackgroundControls({ project }) {
           else { isMasked[i] = 0; filled[i] = 1; }
         }
 
-        // 🌟 ADVANCED ALGORITHM: Gaussian Weights for smoother blending
         const gWeights = [
           [1, 2, 1],
           [2, 0, 2],
           [1, 2, 1]
         ];
 
-        const maxIterations = 150; // High quality convergence
+        const maxIterations = 150; 
         for (let iter = 0; iter < maxIterations; iter++) {
           let changed = false;
 
-          // Forward Sweep
           for (let y = minY; y <= maxY; y++) {
             for (let x = minX; x <= maxX; x++) {
               const idx = y * w + x;
@@ -255,7 +268,6 @@ export function BackgroundControls({ project }) {
             }
           }
 
-          // Backward Sweep
           for (let y = maxY; y >= minY; y--) {
             for (let x = maxX; x >= minX; x--) {
               const idx = y * w + x;
@@ -286,7 +298,6 @@ export function BackgroundControls({ project }) {
           if (!changed) break;
         }
 
-        // 🌟 APPLY OPACITY PERCENTAGE
         const opacityFactor = healingOpacity / 100;
         for (let y = minY; y <= maxY; y++) {
           for (let x = minX; x <= maxX; x++) {
@@ -383,7 +394,9 @@ export function BackgroundControls({ project }) {
   const handleBackgroundRemoval = async () => {
     const mainImage = getMainImage();
     if (!mainImage || !project) return;
-    setProcessingMessage("Removing background with AI...");
+    
+    setProcessingMessage("AI Background Removal processing... Please wait 5-10s");
+    
     try {
       const currentImageUrl = project.currentImageUrl || project.originalImageUrl;
       let bgRemovedUrl = currentImageUrl;
@@ -401,21 +414,40 @@ export function BackgroundControls({ project }) {
           bgRemovedUrl = urlObj.toString();
         }
       } else {
+        // 🌟 FIX: Yahan URL object ko sahi se .toString() karna jaruri tha
         const base64Image = mainImage.toDataURL({ format: "png" });
         const cldUrl = await uploadToCloudinary(base64Image);
         const urlObj = new URL(cldUrl);
         const parts = urlObj.pathname.split("/");
         parts.splice(parts.indexOf("upload") + 1, 0, "e_background_removal");
-        bgRemovedUrl = parts.join("/");
+        urlObj.pathname = parts.join("/"); 
+        bgRemovedUrl = urlObj.toString(); // Pura URL banega https://res.cloudinary...
+      }
+
+      // Wait for Cloudinary to finish processing
+      if (bgRemovedUrl.includes("res.cloudinary.com") && bgRemovedUrl.includes("e_background_removal")) {
+        await waitForCloudinaryProcessing(bgRemovedUrl);
       }
 
       const processedImage = await FabricImage.fromURL(bgRemovedUrl, { crossOrigin: "anonymous" });
+      
+      const targetWidth = mainImage.width * mainImage.scaleX;
+      const targetHeight = mainImage.height * mainImage.scaleY;
+      
+      const newScaleX = targetWidth / processedImage.width;
+      const newScaleY = targetHeight / processedImage.height;
+
       processedImage.set({
-        left: mainImage.left, top: mainImage.top,
-        scaleX: mainImage.scaleX, scaleY: mainImage.scaleY,
-        angle: mainImage.angle, originX: mainImage.originX, originY: mainImage.originY,
+        left: mainImage.left, 
+        top: mainImage.top,
+        scaleX: newScaleX, 
+        scaleY: newScaleY, 
+        angle: mainImage.angle, 
+        originX: mainImage.originX, 
+        originY: mainImage.originY,
         shadow: mainImage.shadow,
       });
+      
       canvasEditor.remove(mainImage);
       canvasEditor.add(processedImage);
       processedImage.setCoords();
@@ -431,7 +463,9 @@ export function BackgroundControls({ project }) {
   const handleBackgroundBlur = async () => {
     const mainImage = getMainImage();
     if (!mainImage || !project) return;
-    setProcessingMessage("Applying AI background blur...");
+    
+    setProcessingMessage("Applying AI background blur... Please wait");
+    
     try {
       let currentImageUrl = project.currentImageUrl || project.originalImageUrl;
       if (!currentImageUrl.includes("res.cloudinary.com")) {
@@ -439,13 +473,31 @@ export function BackgroundControls({ project }) {
         currentImageUrl = await uploadToCloudinary(base64Image);
       }
       const blurredUrl = buildCloudinaryBlurUrl(currentImageUrl, blurIntensity);
+      
+      if (blurredUrl.includes("res.cloudinary.com")) {
+        await waitForCloudinaryProcessing(blurredUrl);
+      }
+
       const processedImage = await FabricImage.fromURL(blurredUrl, { crossOrigin: "anonymous" });
+      
+      // 🌟 MAGIC FIX: Target Dimensions
+      const targetWidth = mainImage.width * mainImage.scaleX;
+      const targetHeight = mainImage.height * mainImage.scaleY;
+      
+      const newScaleX = targetWidth / processedImage.width;
+      const newScaleY = targetHeight / processedImage.height;
+
       processedImage.set({
-        left: mainImage.left, top: mainImage.top,
-        scaleX: mainImage.scaleX, scaleY: mainImage.scaleY,
-        angle: mainImage.angle, originX: mainImage.originX, originY: mainImage.originY,
+        left: mainImage.left, 
+        top: mainImage.top,
+        scaleX: newScaleX, // Adjusts perfectly to existing canvas layout
+        scaleY: newScaleY, 
+        angle: mainImage.angle, 
+        originX: mainImage.originX, 
+        originY: mainImage.originY,
         shadow: mainImage.shadow,
       });
+      
       canvasEditor.remove(mainImage);
       canvasEditor.add(processedImage);
       processedImage.setCoords();
