@@ -44,7 +44,7 @@ export default function IntroVideo({ isLoadingUser, isLoggedIn, onComplete }) {
   }, [isLoadingUser, isLoggedIn, onComplete]);
 
   // Jab tak session check ho raha hai, Verifying wali screen dikhao
-      if (isLoadingUser || !isSessionChecked) {
+  if (isLoadingUser || !isSessionChecked) {
     return <div className="fixed inset-0 bg-[#000] z-[999999]" />;
   }
 
@@ -68,7 +68,9 @@ export default function IntroVideo({ isLoadingUser, isLoggedIn, onComplete }) {
             autoPlay
             muted
             playsInline
-            className="w-full h-full object-cover"
+            /* 🌟 RESPONSIVE FIX: Mobile par 'object-contain' taaki side se cut na ho, 
+                aur badi screen par 'sm:object-cover' taaki full screen dikhe 🌟 */
+            className="w-full h-full max-w-[100vw] max-h-[100vh] object-contain sm:object-cover pointer-events-none"
           />
         </motion.div>
       )}
