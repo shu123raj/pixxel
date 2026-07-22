@@ -64,7 +64,7 @@ export default function IntroVideo({ isLoadingUser, isLoggedIn, onComplete }) {
           }}
         >
           <video
-            src="https://res.cloudinary.com/do6jlckzy/video/upload/v1783104435/intro-video_ruumaa.mp4"
+            src="https://res.cloudinary.com/oqoeovyq/video/upload/v1784754376/Green_and_White_Minimalist_Intro_Video_2_cf9tvk.mp4"
             autoPlay
             muted
             playsInline
