@@ -656,7 +656,7 @@ export default function SkinAIEditor() {
                {activeStep === 1 ? (
                    <motion.div key="video" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full">
                        {/* You can replace this src with your actual video URL */}
-                       <video src="video project 5.mp4" autoPlay loop muted className="w-full h-full object-cover"></video>
+                       <video src="https://res.cloudinary.com/oqoeovyq/video/upload/v1784752105/Video_Project_5_wvmiff.mp4" autoPlay loop muted className="w-full h-full object-cover"></video>
                    </motion.div>
                ) : (
                    <motion.div key="slider" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full">
